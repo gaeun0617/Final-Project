@@ -9,6 +9,7 @@
 <title>요기 갈까You?</title>
 <link rel="stylesheet" href="resources/css/index.css">
 <link rel="stylesheet" href="resources/css/searchMenu.css">
+<link rel="stylesheet" href="resources/css/calendar.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 <script type="text/javascript" src="resources/js/go.js"></script>
@@ -32,7 +33,13 @@
 			$(".tabSlideManu").animate({
 				width : 'toggle'
 			});
-		});		
+		});
+		
+		calendar_init();
+		click_calendar_date();
+		make_date();
+		dialog_click_event();
+		
 	});
 </script>
 </head>
@@ -52,7 +59,7 @@
 					<span> <img id="tabManuImg" src="resources/img/close.png">
 					</span>
 					<div class="tabSubManu" onclick="search();">검색</div>
-					<div class="tabSubManu">메뉴2</div>
+					<div class="tabSubManu" onclick="getCalendar();">달력 보기</div>
 					<div class="tabSubManu">메뉴3</div>
 					<div class="tabSubManu">메뉴4</div>
 				</div>
@@ -66,7 +73,7 @@
 				<tr>
 					<td align="center" style="cursor: pointer; color: #FFFFFF;"
 						onclick="search();">검색</td>
-					<td align="center" style="cursor: pointer; color: #FFFFFF;">메뉴2</td>
+					<td align="center" style="cursor: pointer; color: #FFFFFF;" onclick="getCalendar();">달력 보기</td>
 					<td align="center" style="cursor: pointer; color: #FFFFFF;">메뉴3</td>
 					<td align="center" style="cursor: pointer; color: #FFFFFF;">메뉴4</td>
 				</tr>

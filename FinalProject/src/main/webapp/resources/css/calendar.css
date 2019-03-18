@@ -1,0 +1,104 @@
+@CHARSET "UTF-8";
+.calendarWrapper{
+	height:100%;
+	width:100%;
+}
+#calendar{
+	height:100%;
+	width:100%;
+	display:grid;
+	grid-template-rows:5% 95%;
+}
+.current{
+	display:grid;
+	align-items:center;
+	font-size:120%;
+	text-align:center;
+}
+#dates{
+	display:grid;
+	height:100%;
+}
+::-webkit-scrollbar{
+	display:none;
+}
+
+#dialog_field{
+	display:grid;
+	grid-template-rows:30% 60% 10%;
+	position:absolute;
+	width:50%;
+	height:50%;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	border:1px solid black;
+	background-color:rgba(255,255,255,0.5);
+}
+#dialog_body, #dialog_footer{
+	display:grid;
+	grid-template-columns:1fr 1fr;
+	grid-column-gap:30px;
+	justify-content:center;
+	align-content:center;
+}
+#dialog_body span{
+	width:100%;
+	height:100%;
+}
+#dialog_body span select{
+	width:90%;
+	height:120%;
+}
+#dialog_footer span{
+	font-size:120%;
+	font-weight:bold;
+}
+#monthField{
+	height:calc(100% - 55px);
+	overflow:auto;
+}
+.week_character{
+	position:fixed;
+	z-index:2;
+	display:grid;
+	border:1px solid black;
+	grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	height:50px;
+	width:100%;
+}
+.week_record{
+	position:relative;
+	top:55px;
+	display:grid;
+	grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	height:30%;
+	width:100%;
+	overflow:auto;
+}
+.day_of_the_week{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	border-bottom:1px solid black;
+}
+.date_div{
+	width:100%;
+	height:100%;
+	display:grid;
+	grid-template-rows:10% 90%;
+}
+.title_span{
+	margin-top:10px;
+	
+}
+.title_div{
+	display:grid;
+	height:100%;
+	width:100%;
+	overflow:auto;
+}
+.date_number{
+	padding-right:20px;
+	text-align:right;
+}
