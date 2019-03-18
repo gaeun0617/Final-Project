@@ -20,7 +20,6 @@
 			<div>시작날짜:${sr.ge_start_date}</div>
 			<div>종료날짜:${sr.ge_end_date}</div>
 			<div>주소:${sr.ge_addr}</div>
-			
 			<div>지도</div>
 		</div>
 	</c:if>
