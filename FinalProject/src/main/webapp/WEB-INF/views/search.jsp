@@ -13,7 +13,7 @@
 			var keyword = $("#searchInput").val();
 			$.ajax({
 				url : "search.get",
-				data : {ge_title : keyword},
+				data : {ge_title : keyword, ge_addr : keyword},
 				success : function(data) {
 					$(".searchResultTable").empty();
 					$(data).find("search").each(function(i, search){
