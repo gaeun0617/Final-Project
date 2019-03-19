@@ -90,12 +90,16 @@
 }
 .title_span{
 	margin-top:10px;
-	
+	margin-bottom:auto;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
 }
 .title_div{
-	display:grid;
+	display:flex;
+	flex-direction:column;
 	height:100%;
-	width:100%;
+	max-width:100%;
 	overflow:auto;
 }
 .date_number{
