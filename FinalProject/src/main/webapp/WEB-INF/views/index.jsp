@@ -42,7 +42,6 @@
 		make_date();
 		dialog_click_event();
 		map_detail();
-		
 	});
 </script>
 </head>
