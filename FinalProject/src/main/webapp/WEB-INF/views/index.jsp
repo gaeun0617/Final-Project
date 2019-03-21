@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="resources/css/calendar.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script type="text/javascript" src="resources/js/map.js"></script>
 <script type="text/javascript" src="resources/js/go.js"></script>
 <script type="text/javascript" src="resources/js/inputCheck.js"></script>
 <script type="text/javascript" src="resources/js/validCheck.js"></script>
@@ -20,6 +21,8 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
 	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=af027ae344faba2343cf42cebbdc4728"></script>
 <script type="text/javascript">
 	$(function() {
 		$(".tabSlideManu").hide();
@@ -34,7 +37,7 @@
 				width : 'toggle'
 			});
 		});
-		
+		map_detail();
 		calendar_init();
 		click_calendar_date();
 		make_date();
@@ -73,7 +76,8 @@
 				<tr>
 					<td align="center" style="cursor: pointer; color: #FFFFFF;"
 						onclick="search();">검색</td>
-					<td align="center" style="cursor: pointer; color: #FFFFFF;" onclick="getCalendar();">달력 보기</td>
+					<td align="center" style="cursor: pointer; color: #FFFFFF;"
+						onclick="getCalendar();">달력 보기</td>
 					<td align="center" style="cursor: pointer; color: #FFFFFF;">메뉴3</td>
 					<td align="center" style="cursor: pointer; color: #FFFFFF;">메뉴4</td>
 				</tr>

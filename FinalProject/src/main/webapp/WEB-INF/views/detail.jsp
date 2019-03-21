@@ -21,6 +21,7 @@
 			<div>종료날짜:${sr.ge_end_date}</div>
 			<div>주소:${sr.ge_addr}</div>
 			<div>지도</div>
+			<div id="map" style="width:400px;height: 300px;"></div>
 		</div>
 	</c:if>
 </body>
