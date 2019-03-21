@@ -215,15 +215,12 @@
 	}
 	.wrapper {
 		background-color: #FFCCCC;
-		position:relative;
 		height: 100%;
 		display: grid;
-		grid-template-rows:80%;
+		grid-template-rows:10% 80% 10%;
 	}
 	.header{
-		position:fixed;
-		height:10%;
-		top:0;
+		height:100%;
 		width:100%;
 	}
 	.titleArea{
@@ -242,19 +239,16 @@
 	}
 	
 	.contentBody{
-		position:relative;
-		top:15%;
+		display:flex;
+		flex-direction:column;
 		text-align:center;
 		width:100%;
 		height:100%;
 		overflow:auto;
-	}
-	
+	}	
 	.footer{
-		position:fixed;
-		height:10%;
+		height:100%;
 		width:100%;
-		bottom:0;
 	}
 	.manuTable {
 		width: 100%;

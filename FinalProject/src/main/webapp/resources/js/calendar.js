@@ -163,7 +163,7 @@ function show_calendar(y, m, d) {
 					if(day == 0){
 						day = 7;
 						start = ld[1] - (day - j) + 1;
-						var date_number = $("<span class='date_number'></span>").text(start).css("color","#FAFAFA");
+						var date_number = $("<span class='date_number'></span>").text(start).css("color","#9E9E9E");
 						var date_div = $("<div class='date_div'></span>").append(date_number);
 					}else{
 						if(start > 10){
@@ -199,7 +199,7 @@ function show_calendar(y, m, d) {
 					if(day > j){
 						start = ld[1] - (day - j) + 1;
 					}
-					var date_number = $("<span class='date_number'></span>").text(start).css("color","#FAFAFA");
+					var date_number = $("<span class='date_number'></span>").text(start).css("color","#9E9E9E");
 					var date_div = $("<div class='date_div'></span>").append(date_number);
 					week_record.append(date_div);
 				}
@@ -212,7 +212,7 @@ function show_calendar(y, m, d) {
 							var date_div = $("<div class='date_div'></span>").append(date_number);
 						}else{
 							start = 1;
-							var date_number = $("<span class='date_number'></span>").text(start).css("color","#FAFAFA");
+							var date_number = $("<span class='date_number'></span>").text(start).css("color","#9E9E9E");
 							var date_div = $("<div class='date_div'></span>").append(date_number);
 							flag = true;
 						}
@@ -244,7 +244,7 @@ function show_calendar(y, m, d) {
 					}
 					
 				}else{
-					var date_number = $("<span class='date_number'></span>").text(start).css("color","#FAFAFA");
+					var date_number = $("<span class='date_number'></span>").text(start).css("color","#9E9E9E");
 					var date_div = $("<div class='date_div'></span>").append(date_number);
 				}			
 				week_record.append(date_div);
