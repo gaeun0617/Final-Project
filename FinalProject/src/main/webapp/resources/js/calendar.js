@@ -6,6 +6,10 @@ function calendar_init() {
 	$("body").css('max-height','100%').css('overflow','hidden');
 	$(".contentBody").css('height','100%').css('overflow','auto');
 	$("#dialog_field").hide();
+	click_calendar_date();
+	make_date();
+	dialog_click_event();
+	get_festivalTitle();
 }
 function click_calendar_date() {
 	$(".current").click(function() {
@@ -15,7 +19,7 @@ function click_calendar_date() {
 }
 function dialog_paint(flag) {
 	if (flag == 1) {
-		$("#dialog_field").show();
+		$("#dialog_field").show().css("background-color","#FAFAFA");
 		$(".wrapper").css("background-color", "#9E9E9E");
 	} else if (flag == 2) {
 		$("#dialog_field").hide();
@@ -314,4 +318,12 @@ function temp_date(y,m,start){
 	
 	temp = y+temp_m+temp_d;
 	return temp;
+}
+
+//title클릭 시 상세페이지로
+function get_festivalTitle(){
+	$(document).on("click", ".title_span", function(){
+		var title = $(this).text();
+		location.replace("/festival/detail.go?ge_title="+title);
+	});
 }
