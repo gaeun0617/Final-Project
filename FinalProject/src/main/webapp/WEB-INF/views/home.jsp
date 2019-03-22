@@ -28,10 +28,12 @@
 				<li><img src="resources/img/paris.jpg" title="에펠탑"></li>
 			</ul>
 		</div>
-	</div>
-	<h3 class="introduceTitle">사이트 소개</h3>
-	<div class="mainVideoArea">
-		<iframe class="mainVideo" height="250px" src="https://www.youtube.com/embed/FN5NTyHq9GQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<div class="mediaFrame">
+			<h3 class="introduceTitle">사이트 소개</h3>
+			<div class="mainVideoArea">
+				<iframe class="mainVideo" src="https://www.youtube.com/embed/FN5NTyHq9GQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>		
+		</div>
 	</div>
 </body>
 </html>

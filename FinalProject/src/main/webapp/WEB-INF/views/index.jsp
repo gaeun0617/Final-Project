@@ -38,9 +38,6 @@
 			});
 		});
 		calendar_init();
-		click_calendar_date();
-		make_date();
-		dialog_click_event();
 		map_detail();
 	});
 </script>
