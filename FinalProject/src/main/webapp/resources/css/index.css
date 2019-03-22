@@ -12,19 +12,28 @@
 	html, body {
 		margin: 0px;
 		padding: 0px;
+		height:100%;
 		background-color: #FFCCCC;
 	}
+	.wrapper{
+		height:100%;
+		display:grid;
+		grid-template-rows:10% 90%;
+	}
 	.contentBody{
-		position: relative;
-		top: 15%;
+		height:fit-content;
 		text-align: center;
 	}
+	.header{
+		height:100%;
+		width:100%;
+	}
 	.titleArea {
+		position:relative;
 		background-color: #1DE9B6;
 		margin: 0 auto;
-		width: 1200px;
-		height: 60px;
-		position: relative;
+		width: 95%;
+		height: 100%;
 	}
 	.webTitleArea {
 		font-family: TitleText;
@@ -73,38 +82,43 @@
 		height: 40px;
 		cursor: pointer;
 	}
+	.homeContentsArea{
+		display:grid;
+		height:fit-content;
+		width:100%;
+	}
 	.imageSlide {
-		max-width: 1000px;
-		margin-left: 200px;
-		position: absolute;
-		top: 50px;
-		z-index: 1;
+		display:inherit;
+		justify-self:center;
+		width:80%;
+	}
+	.mediaFrame{
+		display:inherit;
+		justify-content:center;
+		height:100%;
+		width:100%;
+		text-align:center;
 	}
 	.manuTable {
 		display: none;
 	}
 	.introduceTitle {
+		margin:0;
+		display:block;
+		height:100%;
+		width:100%;
 		font-size: 25px;
 		font-weight: bold;
-		position: relative;
-		top: 800px;
-		left: 0px;
-		z-index: 2;
 	}
 	.mainVideoArea {
+		height:100%;
 		width: 100%;
-		position: relative;
-		top: 800px;
-		z-index: 1;
-		padding-bottom: 50.00%;
-		padding-top: 10px;
-		overflow: hidden;
+		justify-content:center;
 	}
-	.mainVideoArea .mainVideo {
-		position: absolute;
-		left: 365px;
-		width: 50%;
-		height: 60%;
+	.mainVideo {
+		margin:0;
+		width: 150%;
+		height: 200%;
 	}
 }
 
@@ -260,10 +274,25 @@
 	.tabSlideManu{
 		display:none;
 	}
-	
+	.mediaFrame{
+		display:inherit;
+		justify-content:center;
+		height:100%;
+		width:100%;
+		text-align:center;
+	}
 	.introduceTitle {
 		font-size: 25px;
 		font-weight: bold;
-		z-index: 2;
+	}
+	.mainVideoArea {
+		height:100%;
+		width: 100%;
+		justify-content:center;
+	}
+	.mainVideo {
+		margin:0;
+		width: 80%;
+		height: 60%;
 	}
 }

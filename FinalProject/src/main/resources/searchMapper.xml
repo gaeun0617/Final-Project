@@ -8,6 +8,6 @@
 	</select>
 	<select id="detailView" parameterType="com.soldesk.festival.search.Search"
 		resultType="com.soldesk.festival.search.Search">
-		select * from gov_event where ge_title=#{ge_title}
+		select * from gov_event where ge_title like '%'||#{ge_title}||'%'
 	</select>
 </mapper>
