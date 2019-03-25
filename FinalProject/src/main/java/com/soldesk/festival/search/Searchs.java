@@ -21,6 +21,7 @@ public class Searchs {
 	public List<Search> getSearch() {
 		return search;
 	}
+	
 	@XmlElement
 	public void setSearch(List<Search> search) {
 		this.search = search;

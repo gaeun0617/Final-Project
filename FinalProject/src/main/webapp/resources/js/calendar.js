@@ -1,7 +1,3 @@
-/**
- * 
- */
-
 function calendar_init() {
 	$("body").css('max-height','100%').css('overflow','hidden');
 	$(".contentBody").css('height','100%').css('overflow','auto');
@@ -321,10 +317,10 @@ function temp_date(y,m,start){
 	return temp;
 }
 
-//title클릭 시 상세페이지로
+// title클릭 시 상세페이지로
 function get_festivalTitle(){
 	$(document).on("click", ".title_span", function(){
 		var title = $(this).text();
-		location.replace("/festival/detail.go?ge_title="+title);
+		get_detail_info(title);
 	});
 }

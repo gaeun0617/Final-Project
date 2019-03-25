@@ -37,7 +37,7 @@
 		</div>
 	</div>
 <script type="text/javascript">
-	calendar_init();
+calendar_init();
 </script>
 </body>
 </html>

@@ -15,21 +15,21 @@
 		height:100%;
 		background-color: #FFCCCC;
 	}
-	.wrapper{
-		height:100%;
-		display:grid;
-		grid-template-rows:10% 90%;
+	.wrapper {
+		height: 100%;
+		display: grid;
+		grid-template-rows: 10% 90%;
 	}
-	.contentBody{
-		height:fit-content;
+	.contentBody {
+		height: fit-content;
 		text-align: center;
 	}
-	.header{
-		height:100%;
-		width:100%;
+	.header {
+		height: 100%;
+		width: 100%;
 	}
 	.titleArea {
-		position:relative;
+		position: relative;
 		background-color: #1DE9B6;
 		margin: 0 auto;
 		width: 95%;
@@ -82,46 +82,43 @@
 		height: 40px;
 		cursor: pointer;
 	}
-	.homeContentsArea{
-		display:grid;
-		height:fit-content;
-		width:100%;
+	.homeContentsArea {
+		display: grid;
+		height: fit-content;
+		width: 100%;
 	}
 	.imageSlide {
-		display:inherit;
-		justify-self:center;
-		width:80%;
+		display: inherit;
+		justify-self: center;
+		width: 80%;
 	}
-	.mediaFrame{
-		display:inherit;
-		justify-content:center;
-		height:100%;
-		width:100%;
-		text-align:center;
+	.mediaFrame {
+		display: inherit;
+		justify-content: center;
+		height: 100%;
+		width: 100%;
+		text-align: center;
 	}
 	.manuTable {
 		display: none;
 	}
 	.introduceTitle {
 		margin: 0;
-		margin-top: 10px;
 		display: block;
 		height: 100%;
 		width: 100%;
-		font-size: 35px;
+		font-size: 25px;
 		font-weight: bold;
 	}
 	.mainVideoArea {
-		width: 100%;
 		height: 100%;
+		width: 100%;
+		justify-content: center;
 	}
 	.mainVideo {
 		margin: 0;
-		margin-top: 20px;
-		width: 550px;
-		height: 350px;
-		position: absolute;
-		left: 450px;
+		width: 150%;
+		height: 200%;
 	}
 }
 
@@ -164,12 +161,12 @@
 		width: 50px;
 		height: 50px;
 	}
-	.contentBody{
-		position:relative;
-		text-align:center;
-		width:100%;
-		height:100%;
-		overflow:auto;
+	.contentBody {
+		position: relative;
+		text-align: center;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
 	}
 	.webContentArea {
 		height: fit-content;
@@ -221,51 +218,50 @@
 }
 
 /* 모바일 */
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
 	::-webkit-scrollbar {
 		display: none;
 	}
-	html,body {
+	html, body {
 		margin: 0;
 		padding: 0;
-		height:100%;
+		height: 100%;
 	}
 	.wrapper {
 		background-color: #FFCCCC;
 		height: 100%;
 		display: grid;
-		grid-template-rows:10% 80% 10%;
+		grid-template-rows: 10% 80% 10%;
 	}
-	.header{
-		height:100%;
-		width:100%;
+	.header {
+		height: 100%;
+		width: 100%;
 	}
-	.titleArea{
-		height:100%;
+	.titleArea {
+		height: 100%;
 	}
-	.webTitleArea{
-		height:100%;
-		width:100%;		
+	.webTitleArea {
+		height: 100%;
+		width: 100%;
 		background-color: #1DE9B6;
 		padding-left: 5px;
 		font-family: TitleText;
-		font-size: 30px;	
+		font-size: 30px;
 	}
-	#imgIconTd{
-		display:none;
+	#imgIconTd {
+		display: none;
 	}
-	
-	.contentBody{
-		display:flex;
-		flex-direction:column;
-		text-align:center;
-		width:100%;
-		height:100%;
-		overflow:auto;
-	}	
-	.footer{
-		height:100%;
-		width:100%;
+	.contentBody {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+	}
+	.footer {
+		height: 100%;
+		width: 100%;
 	}
 	.manuTable {
 		width: 100%;
@@ -291,21 +287,21 @@
 	.tabSlideManu{
 		display:none;
 	}
-	.mediaFrame{
-		display:inherit;
-		justify-content:center;
-		height:100%;
-		width:100%;
-		text-align:center;
+	.mediaFrame {
+		display: inherit;
+		justify-content: center;
+		height: 100%;
+		width: 100%;
+		text-align: center;
 	}
 	.introduceTitle {
 		font-size: 25px;
 		font-weight: bold;
 	}
 	.mainVideoArea {
-		width: 100%;
 		height: 100%;
-		justify-content:center;
+		width: 100%;
+		justify-content: center;
 	}
 	.mainVideo {
 		margin:0;

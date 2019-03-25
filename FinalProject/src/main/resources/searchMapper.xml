@@ -6,7 +6,7 @@
 		select * from gov_event where ge_title like
 		'%'||#{ge_title}||'%' or ge_addr like '%'||#{ge_addr}||'%' order by ge_area_code
 	</select>
-	<select id="detailView" parameterType="com.soldesk.festival.search.Search"
+	<select id="getDetailFestival" parameterType="com.soldesk.festival.search.Search"
 		resultType="com.soldesk.festival.search.Search">
 
 		select * from gov_event where ge_title like '%'||#{ge_title}||'%'
