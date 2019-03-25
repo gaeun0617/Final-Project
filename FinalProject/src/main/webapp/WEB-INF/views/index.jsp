@@ -57,7 +57,7 @@
 					<div class="tabSubManu" onclick="goHome();">Home</div>
 					<div class="tabSubManu" onclick="search();">Search</div>
 					<div class="tabSubManu" onclick="getCalendar();">Calendar</div>
-					<div class="tabSubManu">Maps</div>
+					<div class="tabSubManu" onclick="getAroundFestival();">Maps</div>
 				</div>
 			</div>
 		</div>
