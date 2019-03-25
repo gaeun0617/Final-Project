@@ -36,6 +36,8 @@
 			<span id="cancel_btn_inDialog">취소</span>
 		</div>
 	</div>
-
+<script type="text/javascript">
+	calendar_init();
+</script>
 </body>
 </html>

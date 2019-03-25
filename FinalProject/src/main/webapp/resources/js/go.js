@@ -4,3 +4,6 @@ function search() {
 function getCalendar(){
 	location.href = "get.calendar";
 }
+function getAroundFestival(){
+	location.href = "get.aroundFestival";
+}

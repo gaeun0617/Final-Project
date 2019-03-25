@@ -22,7 +22,7 @@
 <script
 	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=af027ae344faba2343cf42cebbdc4728"></script>
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=af027ae344faba2343cf42cebbdc4728&libraries=services"></script>
 <script type="text/javascript">
 	$(function() {
 		$(".tabSlideManu").hide();
@@ -37,7 +37,6 @@
 				width : 'toggle'
 			});
 		});
-		calendar_init();
 		map_detail();
 	});
 </script>
@@ -74,7 +73,8 @@
 						onclick="search();">검색</td>
 					<td align="center" style="cursor: pointer; color: #FFFFFF;"
 						onclick="getCalendar();">달력 보기</td>
-					<td align="center" style="cursor: pointer; color: #FFFFFF;">메뉴3</td>
+					<td align="center" style="cursor: pointer; color: #FFFFFF;"
+						onclick="getAroundFestival();">주위 축제</td>
 					<td align="center" style="cursor: pointer; color: #FFFFFF;">메뉴4</td>
 				</tr>
 			</table>
