@@ -35,7 +35,7 @@
 				width : 'toggle'
 			});
 		});
-
+		
 		map_detail();
 	});
 </script>
