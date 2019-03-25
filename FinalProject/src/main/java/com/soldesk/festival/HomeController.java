@@ -68,5 +68,18 @@ public class HomeController {
 	public @ResponseBody Events getEventJson(EventBean eb){
 		return cDAO.getEvent(eb);
 	}
+	
+	//주위 지도
+	@RequestMapping(value = "/get.aroundFestival", method = RequestMethod.GET)
+	public String getAroundFesival(HttpServletRequest req) {
+		req.setAttribute("contentPage", "aroundFestival.jsp");
+		return "index";
+	}
+	@RequestMapping(value="/get.aroundEvent", method=RequestMethod.POST, produces="application/json; charset=utf-8")
+	public @ResponseBody Events getAroundEventJson(EventBean eb){
+		return cDAO.getAroundEvent(eb);
+	}
+	
+	
 }
 

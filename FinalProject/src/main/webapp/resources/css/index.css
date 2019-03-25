@@ -12,7 +12,7 @@
 	html, body {
 		margin: 0px;
 		padding: 0px;
-		height: 100%;
+		height:100%;
 		background-color: #FFCCCC;
 	}
 	.wrapper {
@@ -33,7 +33,6 @@
 		background-color: #1DE9B6;
 		margin: 0 auto;
 		width: 95%;
-		height: 100%;
 	}
 	.webTitleArea {
 		font-family: TitleText;
@@ -57,22 +56,23 @@
 	}
 	.tabSlideManu {
 		width: 370px;
-		height: 600px;
+		height: 730px;
 		background-color: #FFF59D;
 		position: absolute;
-		right: 0;
+		right: 0px;
 		top: 60px;
 		z-index: 2;
 	}
 	.tabSubManu {
 		display: grid;
-		border-bottom: #000000 solid 3px;
+		border-bottom: #FFDE03 solid 2px;
 		height: 50px;
 		text-align: center;
 		align-items: center;
 		cursor: pointer;
 		font-size: 15px;
 		font-weight: bolder;
+		color: #616161;
 	}
 	.tabSubManu:hover {
 		background-color: #FFFFFF;
@@ -269,8 +269,23 @@
 		background-color: #1DE9B6;
 		font-family: TitleText;
 	}
-	.tabSlideManu {
-		display: none;
+	.homeContentsArea{
+		display:grid;
+		height:fit-content;
+		width:100%;
+		margin-top: 20px;
+	}
+	.imageSlide {
+		display: inherit;
+		justify-self: center;
+		width: 95%;
+		height: 100%;
+	}
+	.bxslider{
+		width: 100%;
+	}
+	.tabSlideManu{
+		display:none;
 	}
 	.mediaFrame {
 		display: inherit;
@@ -289,8 +304,13 @@
 		justify-content: center;
 	}
 	.mainVideo {
-		margin: 0;
-		width: 80%;
-		height: 60%;
+		margin:0;
+		width: 98%;
+		height: 250px;
+		
+	}
+	.detailPageArea{
+		border: #FFFFFF solid 2px;
+		width: 98%;
 	}
 }

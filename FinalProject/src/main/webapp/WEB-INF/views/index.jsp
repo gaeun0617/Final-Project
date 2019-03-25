@@ -20,7 +20,7 @@
 <script
 	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fb874587e64415ff8370245481abeb4e"></script>
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=af027ae344faba2343cf42cebbdc4728&libraries=services"></script>
 <script type="text/javascript">
 	$(function() {
 		$(".tabSlideManu").hide();
@@ -35,7 +35,8 @@
 				width : 'toggle'
 			});
 		});
-		
+
+		map_detail();
 	});
 </script>
 </head>
@@ -52,12 +53,11 @@
 					</tr>
 				</table>
 				<div class="tabSlideManu">
-					<span> <img id="tabManuImg" src="resources/img/close.png">
-					</span>
-					<div class="tabSubManu" onclick="search();">검색</div>
-					<div class="tabSubManu" onclick="getCalendar();">달력 보기</div>
-					<div class="tabSubManu">메뉴3</div>
-					<div class="tabSubManu">메뉴4</div>
+					<span><img id="tabManuImg" src="resources/img/close.png"></span>
+					<div class="tabSubManu" onclick="goHome();">Home</div>
+					<div class="tabSubManu" onclick="search();">Search</div>
+					<div class="tabSubManu" onclick="getCalendar();">Calendar</div>
+					<div class="tabSubManu">Maps</div>
 				</div>
 			</div>
 		</div>
@@ -68,11 +68,13 @@
 			<table class="manuTable">
 				<tr>
 					<td align="center" style="cursor: pointer; color: #FFFFFF;"
-						onclick="search();">검색</td>
+						onclick="goHome();">Home</td>
 					<td align="center" style="cursor: pointer; color: #FFFFFF;"
-						onclick="getCalendar();">달력 보기</td>
-					<td align="center" style="cursor: pointer; color: #FFFFFF;">메뉴3</td>
-					<td align="center" style="cursor: pointer; color: #FFFFFF;">메뉴4</td>
+						onclick="search();">Search</td>
+					<td align="center" style="cursor: pointer; color: #FFFFFF;"
+						onclick="getCalendar();">Calendar</td>
+					<td align="center" style="cursor: pointer; color: #FFFFFF;"
+					onclick="getAroundFestival();">Maps</td>
 				</tr>
 			</table>
 		</div>

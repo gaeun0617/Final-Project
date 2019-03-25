@@ -13,4 +13,8 @@ public class CalendarDAO {
 		CalendarMapper cm = ss.getMapper(CalendarMapper.class);
 		return new Events(cm.getEvent(eb));
 	}
+	public Events getAroundEvent(EventBean eb){
+		CalendarMapper cm = ss.getMapper(CalendarMapper.class);
+		return new Events(cm.getAroundEvent(eb));
+	}
 }
