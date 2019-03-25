@@ -6,6 +6,7 @@ function calendar_init() {
 	$("body").css('max-height','100%').css('overflow','hidden');
 	$(".contentBody").css('height','100%').css('overflow','auto');
 	$("#dialog_field").hide();
+	
 	click_calendar_date();
 	make_date();
 	dialog_click_event();

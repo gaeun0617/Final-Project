@@ -10,7 +10,7 @@
 </head>
 <body>
 	<c:if test="${sr != null}">
-	<div>
+		<div class="detailPageArea">
 			<div>
 				<div>${sr.ge_title }</div>
 			</div>

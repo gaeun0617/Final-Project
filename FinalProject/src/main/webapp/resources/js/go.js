@@ -6,5 +6,4 @@ function getCalendar(){
 }
 function goHome() {
 	location.href = "index.do";
-
 }
