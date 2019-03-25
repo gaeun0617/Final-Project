@@ -1,12 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="resources/js/jquery.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$("#searchInput").keyup(function(e){
@@ -32,7 +30,8 @@
 					
 					$(".result").click(function() {
 						var text = $(this).text();
-						location.href = "detail.go?ge_title="+text;
+						//location.href = "detail.go?ge_title="+text;
+						get_detail_info(text);
 					});
 					
 					var win = $(window).width();
