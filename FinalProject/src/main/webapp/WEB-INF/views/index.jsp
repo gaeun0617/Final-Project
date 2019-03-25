@@ -37,6 +37,7 @@
 				width : 'toggle'
 			});
 		});
+
 		map_detail();
 	});
 </script>
@@ -54,12 +55,11 @@
 					</tr>
 				</table>
 				<div class="tabSlideManu">
-					<span> <img id="tabManuImg" src="resources/img/close.png">
-					</span>
-					<div class="tabSubManu" onclick="search();">검색</div>
-					<div class="tabSubManu" onclick="getCalendar();">달력 보기</div>
-					<div class="tabSubManu">메뉴3</div>
-					<div class="tabSubManu">메뉴4</div>
+					<span><img id="tabManuImg" src="resources/img/close.png"></span>
+					<div class="tabSubManu" onclick="goHome();">Home</div>
+					<div class="tabSubManu" onclick="search();">Search</div>
+					<div class="tabSubManu" onclick="getCalendar();">Calendar</div>
+					<div class="tabSubManu">Maps</div>
 				</div>
 			</div>
 		</div>
@@ -70,12 +70,13 @@
 			<table class="manuTable">
 				<tr>
 					<td align="center" style="cursor: pointer; color: #FFFFFF;"
-						onclick="search();">검색</td>
+						onclick="goHome();">Home</td>
 					<td align="center" style="cursor: pointer; color: #FFFFFF;"
-						onclick="getCalendar();">달력 보기</td>
+						onclick="search();">Search</td>
 					<td align="center" style="cursor: pointer; color: #FFFFFF;"
-						onclick="getAroundFestival();">주위 축제</td>
-					<td align="center" style="cursor: pointer; color: #FFFFFF;">메뉴4</td>
+						onclick="getCalendar();">Calendar</td>
+					<td align="center" style="cursor: pointer; color: #FFFFFF;"
+					onclick="getAroundFestival();">Maps</td>
 				</tr>
 			</table>
 		</div>
