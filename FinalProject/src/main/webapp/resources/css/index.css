@@ -13,7 +13,7 @@
 		margin: 0px;
 		padding: 0px;
 		height:100%;
-		background-color: #FFCCCC;
+		background-color: #FFFFFF;
 	}
 	.wrapper {
 		height: 100%;
@@ -30,7 +30,7 @@
 	}
 	.titleArea {
 		position: relative;
-		background-color: #1DE9B6;
+		background-color: #002c62;
 		margin: 0 auto;
 		width: 95%;
 	}
@@ -130,7 +130,7 @@
 	html, body {
 		margin: 0px;
 		padding: 0px;
-		background-color: #FFCCCC;
+		background-color: #FFFFFF;
 		height: 100%;
 	}
 	.wrapper {
@@ -144,7 +144,7 @@
 	.webTitleArea {
 		width: 100%;
 		height: 60px;
-		background-color: #1DE9B6;
+		background-color: #002c62;
 		padding-left: 5px;
 		font-family: TitleText;
 		font-size: 30px;
@@ -176,7 +176,7 @@
 	.manuTable {
 		width: 100%;
 		height: 50px;
-		background-color: #1DE9B6;
+		background-color: #002c62;
 		font-family: TitleText;
 		position: fixed;
 		bottom: 0px;
@@ -228,7 +228,7 @@
 		height: 100%;
 	}
 	.wrapper {
-		background-color: #FFCCCC;
+		background-color: #FFFFFF;
 		height: 100%;
 		display: grid;
 		grid-template-rows: 10% 80% 10%;
@@ -243,7 +243,7 @@
 	.webTitleArea {
 		height: 100%;
 		width: 100%;
-		background-color: #1DE9B6;
+		background-color: #002c62;
 		padding-left: 5px;
 		font-family: TitleText;
 		font-size: 30px;
@@ -266,7 +266,7 @@
 	.manuTable {
 		width: 100%;
 		height: 100%;
-		background-color: #1DE9B6;
+		background-color: #002c62;
 		font-family: TitleText;
 	}
 	.homeContentsArea{

@@ -2,6 +2,8 @@
  * 
  */
 
+var map;
+
 function makeMap(){
 	
 	var locPosition;
@@ -15,9 +17,19 @@ function makeMap(){
 			
 			var lat = position.coords.latitude, // 위도
 			lon = position.coords.longitude; // 경도
-			
 			locPosition = new daum.maps.LatLng(lat, lon); // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
 			object = showLocate(locPosition);
+			var markerPosition  = new daum.maps.LatLng(lat, lon); 
+
+			// 마커를 생성합니다
+			var marker = new daum.maps.Marker({
+			    position: markerPosition,
+			    title: "내 위치"
+			});
+
+			// 마커가 지도 위에 표시되도록 설정합니다
+			marker.setMap(map);
+			
 			var location = searchAddrFromCoords(object.g, object.m.getCenter(), displayCenterInfo);
 		});
 		
@@ -33,10 +45,11 @@ function showLocate(locPosition){
 	var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
 	var options = { //지도를 생성할 때 필요한 기본 옵션
 			center: locPosition, //지도의 중심좌표.
-			level: 3 //지도의 레벨(확대, 축소 정도)
+			level: 6 //지도의 레벨(확대, 축소 정도)
 	};
 	
-	var map = new daum.maps.Map(container, options); //지도 생성 및 객체 리턴
+	map = new daum.maps.Map(container, options); //지도 생성 및 객체 리턴
+	
 	var geocoder = new daum.maps.services.Geocoder();
 	var reobject = {m:map, g:geocoder};
 	return reobject;
@@ -46,9 +59,9 @@ function searchAddrFromCoords(geocoder, coords, callback) {
     // 좌표로 행정동 주소 정보를 요청합니다
     geocoder.coord2RegionCode(coords.getLng(), coords.getLat(), callback);         
 }
+
 function displayCenterInfo(result, status) {
     if (status === daum.maps.services.Status.OK) {
-    	console.log(result[0]);
     	var locate = result[0].region_1depth_name+' '+result[0].region_2depth_name;
     	var d = new Date();
     	var year = d.getFullYear();
@@ -57,13 +70,29 @@ function displayCenterInfo(result, status) {
     		m = '0'+m;
     	}
     	var currency_date = year+m;
-    	console.log(locate);
     	$.ajax({
     		url:'get.aroundEvent',
     		data:{ge_addr:locate, ge_start_date:currency_date, ge_end_date:currency_date},
     		type:'post',
     		success:function(data){
-    			console.log(data);
+    			if(data.events.length != 0){
+    				//ge_map_x, ge_map_y
+    				var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+    				
+    				for(var i = 0; i < data.events.length; i++){
+    					    					
+    					var imageSize = new daum.maps.Size(24, 35); 
+    					var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize); 
+    					 
+    					var markerPosition  = new daum.maps.LatLng(data.events[i].ge_map_y, data.events[i].ge_map_x);
+    					var marker = new daum.maps.Marker({
+    						map:map,
+    					    position: markerPosition,
+    					    title: data.events[i].ge_title,
+    					    image : markerImage
+    					});
+    				}
+    			}
     		}
     	});
     }    

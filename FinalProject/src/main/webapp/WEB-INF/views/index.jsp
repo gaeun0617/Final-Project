@@ -47,9 +47,9 @@
 				<table class="webTitleArea">
 					<tr>
 						<td id="webTitleTd"><a href="index.do"
-							style="text-decoration: none; color: #FFFFFF">요기 갈까You?</a></td>
+							style="text-decoration: none; color: #FFFFFF">요기 갈까 U?</a></td>
 						<td id="imgIconTd"><img id="imgStyle"
-							src="resources/img/menuIcon.png"></td>
+							src="resources/img/menu.png"></td>
 					</tr>
 				</table>
 				<div class="tabSlideManu">
@@ -68,13 +68,21 @@
 			<table class="manuTable">
 				<tr>
 					<td align="center" style="cursor: pointer; color: #FFFFFF;"
-						onclick="goHome();">Home</td>
+						onclick="goHome();">
+						<img src="resources/img/m1.png" width="30px" height="30px"><br>Home
+					</td>
 					<td align="center" style="cursor: pointer; color: #FFFFFF;"
-						onclick="search();">Search</td>
+						onclick="search();">
+						<img src="resources/img/m2.png" width="30px" height="30px"><br>Search
+					</td>
 					<td align="center" style="cursor: pointer; color: #FFFFFF;"
-						onclick="getCalendar();">Calendar</td>
+						onclick="getCalendar();">
+						<img src="resources/img/m3.png" width="30px" height="30px"><br>Calendar
+					</td>
 					<td align="center" style="cursor: pointer; color: #FFFFFF;"
-					onclick="getAroundFestival();">Maps</td>
+					onclick="getAroundFestival();">
+						<img src="resources/img/m4.png" width="30px" height="30px"><br>Maps
+					</td>
 				</tr>
 			</table>
 		</div>
