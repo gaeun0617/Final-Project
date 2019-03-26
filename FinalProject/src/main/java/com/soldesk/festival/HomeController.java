@@ -47,7 +47,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/detail.get", method = RequestMethod.GET,
-			produces = "application/json; charset=utf-8")
+			produces = "application/xml; charset=utf-8")
 	public @ResponseBody Search goDetailFestival(Search s) {
 		return sDAO.getDetailFestival(s);
 	}
