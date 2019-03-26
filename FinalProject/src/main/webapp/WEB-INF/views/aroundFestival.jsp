@@ -4,11 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="resources/css/aroundFestival.css">
 <script type="text/javascript" src="resources/js/aroundFestival.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
-	<div id="map" style="width:500px;height:400px;"></div>
+	<div id="map"></div>
 	<script type="text/javascript">
 		makeMap()
 	</script>
