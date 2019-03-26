@@ -7,6 +7,6 @@
 	</select>
 	<select id="getAroundEvent" resultType="com.soldesk.festival.calendar.EventBean"
 	parameterType="com.soldesk.festival.calendar.EventBean">
-		select * from gov_event where ge_addr like '%'||#{ge_addr}||'%' and ge_start_date like '%'||#{ge_start_date}||'%' and ge_end_date like '%'||#{ge_end_date}||'%'
+		select * from gov_event where ge_addr like '%'||#{ge_addr}||'%' and ge_start_date like '%'||#{ge_start_date}||'%' or ge_end_date like '%'||#{ge_end_date}||'%'
 	</select>
 </mapper>
