@@ -321,6 +321,6 @@ function temp_date(y,m,start){
 function get_festivalTitle(){
 	$(document).on("click", ".title_span", function(){
 		var title = $(this).text();
-		get_detail_info(title);
+		goDetail(title);
 	});
 }

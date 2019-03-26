@@ -30,8 +30,7 @@
 					
 					$(".result").click(function() {
 						var text = $(this).text();
-						//location.href = "detail.go?ge_title="+text;
-						get_detail_info(text);
+						goDetail(text);
 					});
 					
 					var win = $(window).width();
