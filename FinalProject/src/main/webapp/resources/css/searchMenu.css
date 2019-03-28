@@ -49,9 +49,8 @@
 		table-layout: fixed;
 		border: #000000 solid 2px;
 		background-color: #FFFFFF;
-		font-family: TitleText;
+		font-family: NanumGothic;
 		font-size: 15px;
-		font-weight: bold;
 	}
 	.searchResultTable tr:HOVER{
 		background-color: #BDBDBD;
