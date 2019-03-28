@@ -45,7 +45,7 @@
 				<table class="webTitleArea">
 					<tr>
 						<td id="webTitleTd"><a href="index.do"
-							style="text-decoration: none; color: #FFFFFF">요기갈까U?</a></td>
+							style="text-decoration: none; color: #FFFFFF">요기갈까 U ?</a></td>
 						<td id="imgIconTd"><img id="imgStyle"
 							src="resources/img/menuIcon.png"></td>
 					</tr>
