@@ -12,13 +12,14 @@ public class Search {
 	private String ge_image;
 	private String ge_map_x;
 	private String ge_map_y;
+	private String ge_overview;
 	
 	public Search() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public Search(String ge_title, String ge_start_date, String ge_end_date, String ge_addr, String ge_image,
-			String ge_map_x, String ge_map_y) {
+			String ge_map_x, String ge_map_y, String ge_overview) {
 		super();
 		this.ge_title = ge_title;
 		this.ge_start_date = ge_start_date;
@@ -27,9 +28,8 @@ public class Search {
 		this.ge_image = ge_image;
 		this.ge_map_x = ge_map_x;
 		this.ge_map_y = ge_map_y;
+		this.ge_overview = ge_overview;
 	}
-
-
 
 	public String getGe_map_x() {
 		return ge_map_x;
@@ -47,6 +47,15 @@ public class Search {
 	@XmlElement
 	public void setGe_map_y(String ge_map_y) {
 		this.ge_map_y = ge_map_y;
+	}
+
+	public String getGe_overview() {
+		return ge_overview;
+	}
+	
+	@XmlElement
+	public void setGe_overview(String ge_overview) {
+		this.ge_overview = ge_overview;
 	}
 
 	public String getGe_title() {
