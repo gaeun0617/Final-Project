@@ -31,6 +31,51 @@ public class Search {
 		this.ge_overview = ge_overview;
 	}
 
+	public String getGe_title() {
+		return ge_title;
+	}
+	
+	@XmlElement
+	public void setGe_title(String ge_title) {
+		this.ge_title = ge_title;
+	}
+
+	public String getGe_start_date() {
+		return ge_start_date;
+	}
+	
+	@XmlElement
+	public void setGe_start_date(String ge_start_date) {
+		this.ge_start_date = ge_start_date;
+	}
+
+	public String getGe_end_date() {
+		return ge_end_date;
+	}
+	
+	@XmlElement
+	public void setGe_end_date(String ge_end_date) {
+		this.ge_end_date = ge_end_date;
+	}
+
+	public String getGe_addr() {
+		return ge_addr;
+	}
+	
+	@XmlElement
+	public void setGe_addr(String ge_addr) {
+		this.ge_addr = ge_addr;
+	}
+
+	public String getGe_image() {
+		return ge_image;
+	}
+	
+	@XmlElement
+	public void setGe_image(String ge_image) {
+		this.ge_image = ge_image;
+	}
+
 	public String getGe_map_x() {
 		return ge_map_x;
 	}
@@ -56,47 +101,6 @@ public class Search {
 	@XmlElement
 	public void setGe_overview(String ge_overview) {
 		this.ge_overview = ge_overview;
-	}
-
-	public String getGe_title() {
-		return ge_title;
-	}
-	
-	@XmlElement
-	public void setGe_title(String ge_title) {
-		this.ge_title = ge_title;
-	}
-
-	public String getGe_start_date() {
-		return ge_start_date;
-	}
-	@XmlElement
-	public void setGe_start_date(String ge_start_date) {
-		this.ge_start_date = ge_start_date;
-	}
-
-	public String getGe_end_date() {
-		return ge_end_date;
-	}
-	@XmlElement
-	public void setGe_end_date(String ge_end_date) {
-		this.ge_end_date = ge_end_date;
-	}
-
-	public String getGe_addr() {
-		return ge_addr;
-	}
-	@XmlElement
-	public void setGe_addr(String ge_addr) {
-		this.ge_addr = ge_addr;
-	}
-
-	public String getGe_image() {
-		return ge_image;
-	}
-	@XmlElement
-	public void setGe_image(String ge_image) {
-		this.ge_image = ge_image;
 	}
 
 }

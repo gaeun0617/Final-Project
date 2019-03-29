@@ -47,9 +47,9 @@
 			</ul>
 		</div>
 		<div class="mediaFrame">
-			<h3 class="introduceTitle">사이트 소개</h3>
+			<h3 class="introduceTitle">이 주의 핫 페스티벌!</h3>
 			<div class="mainVideoArea">
-				<iframe class="mainVideo" height="300px" src="https://www.youtube.com/embed/FN5NTyHq9GQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe height="180px" src="https://www.youtube.com/embed/f3LLSN80KQM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>		
 		</div>
 	</div>

@@ -57,3 +57,20 @@ function make_map_marker(map,latitude,longitude,addr){
 	// 마커가 지도 위에 표시되도록 설정합니다
 	marker.setMap(map);
 }
+
+function map_geocoder(){
+	// 주소-좌표 변환 객체를 생성합니다
+	var geocoder = new daum.maps.services.Geocoder();
+}
+
+
+
+
+
+
+
+
+
+
+
+
