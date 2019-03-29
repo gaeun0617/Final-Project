@@ -25,6 +25,7 @@
 }
 
 #dialog_field{
+	font-family: NanumGothic;
 	display:grid;
 	grid-template-rows:30% 60% 10%;
 	position:absolute;
@@ -37,6 +38,7 @@
 	background-color:rgba(255,255,255,0.5);
 }
 #dialog_body, #dialog_footer{
+	font-family: NanumGothic;
 	display:grid;
 	grid-template-columns:1fr 1fr;
 	grid-column-gap:30px;
@@ -98,6 +100,8 @@
 }
 .title_div{
 	display:flex;
+	font-family: NanumGothic;
+	font-size: 90%;
 	flex-direction:column;
 	height:100%;
 	max-width:100%;

@@ -9,9 +9,17 @@
 	$(function(){
 		$("#searchInput").keyup(function(e){
 			var keyword = $("#searchInput").val();
+			var submit = {};
+			if($("#input_category").val() == 'key') {
+				submit = {ge_title : keyword, ge_addr:'null'};
+			}else if($("#input_category").val() == 'address') {
+				submit = {ge_title:'null', ge_addr : keyword};
+			}else if($("#input_category").val() == 'category'){
+				submit = {ge_title:'null', ge_addr : 'null'};
+			}
 			$.ajax({
 				url : "search.get",
-				data : {ge_title : keyword, ge_addr : keyword},
+				data : submit,
 				success : function(data) {
 					$(".searchResultTable").empty();
 					$(data).find("search").each(function(i, search){
@@ -30,8 +38,7 @@
 					
 					$(".result").click(function() {
 						var text = $(this).text();
-						//location.href = "detail.go?ge_title="+text;
-						get_detail_info(text);
+						goDetail(text);
 					});
 					
 					var win = $(window).width();
@@ -43,6 +50,13 @@
 </script>
 </head>
 <body>
+	<span class="categoryArea">
+		<select name="category" id="input_category">
+			<option value='category'>-- 분류 --</option>
+			<option id="op1" value="key">키워드</option>
+			<option id="op2" value="address">지역</option>
+		</select>
+	</span>
 	<div class='searchBar'>
 		<table class="searchTableArea">
 			<tr>

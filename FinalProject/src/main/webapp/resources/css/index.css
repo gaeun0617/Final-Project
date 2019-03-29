@@ -1,10 +1,17 @@
 @CHARSET "UTF-8";
 
 @font-face {
-	font-family: "TitleText";
-	src: url("../font/TitleText.ttf") format("truetype");
-	font-weight: bold;
-	font-style: normal;
+	font-family: "BaminDohyeon";
+	src: url("../font/Baemin/BMDOHYEON_ttf.ttf");
+}
+@font-face{
+	font-family: "Exo_2";
+	src: url("../font/exo-2/Exo2-Regular.otf");
+
+}
+@font-face{
+	font-family: "NanumGothic";
+	src: url("../font/Nanum/NanumGothicBold.ttf");
 }
 
 /* PC웹 */
@@ -21,8 +28,12 @@
 		grid-template-rows: 10% 90%;
 	}
 	.contentBody {
-		height: fit-content;
+		display: flex;
+		flex-direction: column;
 		text-align: center;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
 	}
 	.header {
 		height: 100%;
@@ -130,90 +141,117 @@
 	html, body {
 		margin: 0px;
 		padding: 0px;
+		height:100%;
 		background-color: #FFFFFF;
-		height: 100%;
 	}
 	.wrapper {
 		height: 100%;
 		display: grid;
-		grid-template-rows: 10% 1fr 10%;
-	}
-	.homeContentsArea {
-		position: relative;
-	}
-	.webTitleArea {
-		width: 100%;
-		height: 60px;
-		background-color: #002c62;
-		padding-left: 5px;
-		font-family: TitleText;
-		font-size: 30px;
-		font-weight: bold;
-		position: fixed;
-		top: 0px;
-		left: 0px;
-		z-index: 2;
-	}
-	#imgIconTd {
-		visibility: hidden;
-	}
-	#imgStyle {
-		width: 50px;
-		height: 50px;
+		grid-template-rows: 10% 90%;
 	}
 	.contentBody {
-		position: relative;
+		display: flex;
+		flex-direction: column;
 		text-align: center;
 		width: 100%;
 		height: 100%;
 		overflow: auto;
 	}
+	.header {
+		height: 100%;
+		width: 100%;
+	}
+	.titleArea {
+		position: relative;
+		background-color: #002c62;
+		margin: 0 auto;
+		width: 95%;
+	}
+	.webTitleArea {
+		font-family: TitleText;
+		font-size: 30px;
+		padding: 10px;
+	}
+	#imgIconTd {
+		visibility: visible;
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		cursor: pointer;
+	}
+	#imgStyle {
+		width: 50px;
+		height: 50px;
+	}
 	.webContentArea {
+		width: 1200px;
+		text-align: center;
+	}
+	.tabSlideManu {
+		width: 370px;
+		height: 730px;
+		background-color: #FFF59D;
+		position: absolute;
+		right: 0px;
+		top: 60px;
+		z-index: 2;
+	}
+	.tabSubManu {
+		display: grid;
+		border-bottom: #FFDE03 solid 2px;
+		height: 50px;
+		text-align: center;
+		align-items: center;
+		cursor: pointer;
+		font-size: 15px;
+		font-weight: bolder;
+		color: #616161;
+	}
+	.tabSubManu:hover {
+		background-color: #FFFFFF;
+	}
+	#tabManuImg {
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+	}
+	.homeContentsArea {
+		display: grid;
 		height: fit-content;
+		width: 100%;
+	}
+	.imageSlide {
+		display: inherit;
+		justify-self: center;
+		width: 80%;
+	}
+	.mediaFrame {
+		display: inherit;
+		justify-content: center;
+		height: 100%;
 		width: 100%;
 		text-align: center;
 	}
 	.manuTable {
-		width: 100%;
-		height: 50px;
-		background-color: #002c62;
-		font-family: TitleText;
-		position: fixed;
-		bottom: 0px;
-		left: 0px;
-		z-index: 2;
-	}
-	.imageSlide {
-		width: 99%;
-		position: absolute;
-		top: 20px;
-		left: 4px;
-		z-index: 1;
+		display: none;
 	}
 	.introduceTitle {
+		margin: 0;
+		display: block;
+		height: 100%;
+		width: 100%;
 		font-size: 25px;
 		font-weight: bold;
-		position: relative;
-		top: 700px;
-		left: 0px;
-		z-index: 1;
 	}
 	.mainVideoArea {
-		width: 97%;
-		position: relative;
-		top: 700px;
-		z-index: 1;
-		padding-bottom: 45.25%;
-		padding-top: 10px;
-		height: 0;
-		overflow: hidden;
-	}
-	.mainVideoArea .mainVideo {
-		position: absolute;
-		top: 0;
-		left: 20px;
-		width: 100%;
 		height: 100%;
+		width: 100%;
+		justify-content: center;
+	}
+	.mainVideo {
+		margin: 0;
+		width: 150%;
+		height: 200%;
 	}
 }
 
@@ -231,7 +269,7 @@
 		background-color: #FFFFFF;
 		height: 100%;
 		display: grid;
-		grid-template-rows: 10% 80% 10%;
+		grid-template-rows: 9% 82% 9%;
 	}
 	.header {
 		height: 100%;
@@ -244,9 +282,11 @@
 		height: 100%;
 		width: 100%;
 		background-color: #002c62;
-		padding-left: 5px;
-		font-family: TitleText;
+		font-family: BaminDohyeon;
+	}
+	#webTitleTd{
 		font-size: 30px;
+		text-align:center;
 	}
 	#imgIconTd {
 		display: none;
@@ -266,8 +306,13 @@
 	.manuTable {
 		width: 100%;
 		height: 100%;
-		background-color: #002c62;
+		background-color: #575f74;
 		font-family: TitleText;
+	}
+	.manuTable td{
+		font-family:Exo_2;
+		font-weight:bold;
+		font-size:12px;
 	}
 	.homeContentsArea{
 		display:grid;
@@ -306,7 +351,7 @@
 	.mainVideo {
 		margin:0;
 		width: 98%;
-		height: 250px;
+		height: 330px;
 		
 	}
 	.detailPageArea{

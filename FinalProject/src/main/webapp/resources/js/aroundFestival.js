@@ -52,6 +52,7 @@ function showLocate(locPosition){
 	
 	var geocoder = new daum.maps.services.Geocoder();
 	var reobject = {m:map, g:geocoder};
+	
 	return reobject;
 }
 
