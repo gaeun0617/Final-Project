@@ -9,7 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div id="map"></div>
+	<div class="aroundWrapper">
+		<div id="map"></div>
+		<div class="aroundFestivalTable"></div>
+	</div>
 	<script type="text/javascript">
 		makeMap()
 	</script>
