@@ -11,21 +11,36 @@
 	height:100%;
 }
 .aroundFestivalTable{
-	height:100%;	
+	font-family: NanumGothic;
+	text-align:left;
+	padding-left:20px;
+	
 }
 .aroundFestivals{
 	height:150px;
-	border:1px solid black;
+	border:2px solid #039BE5;
+	margin-bottom:5px;
 	display:grid;
 	grid-template-columns:40% 40% 20%;
 	align-items:center;
 }
 .aroundImg{
 	height:100%;
-	width:100%;
+	width:95%;
 	align-content:center;
+	justify-content:center;
+	padding-right:5%;
+	border-right:2px solid #039BE5;
 }
 .aroundImg img{
 	width:100%;
 	max-height:100%;
+}
+.aroundTitle{
+	height:100%;
+	width:95%;
+	border-right:2px solid #039BE5;
+	display:flex;
+	align-items:center;
+	padding-left:5%;
 }

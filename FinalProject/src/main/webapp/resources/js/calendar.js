@@ -17,10 +17,14 @@ function click_calendar_date() {
 function dialog_paint(flag) {
 	if (flag == 1) {
 		$("#dialog_field").show().css("background-color","#FAFAFA");
-		$(".wrapper").css("background-color", "#9E9E9E");
+		$("#calendar").css("background-color", "#9E9E9E");
+		$("#dates").css("background-color", "#9E9E9E");
+		$("#monthField").css("background-color", "#9E9E9E");
 	} else if (flag == 2) {
 		$("#dialog_field").hide();
-		$(".wrapper").css("background-color", "#FFCCCC");
+		$("#calendar").css("background-color", "white");
+		$("#dates").css("background-color", "white");
+		$("#monthField").css("background-color", "white");
 	}
 }
 function make_select() {

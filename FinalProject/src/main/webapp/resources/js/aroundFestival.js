@@ -59,8 +59,9 @@ function searchAddrFromCoords(geocoder, coords, callback) {
 
 function displayCenterInfo(result, status) {
     if (status === daum.maps.services.Status.OK) {
-    	var locate = result[0].region_1depth_name+' '+result[0].region_2depth_name;
-    	
+    	var locate = result[0].region_1depth_name;
+    	//+' '+result[0].region_2depth_name;
+
     	var d = new Date();
     	var year = d.getFullYear();
     	var m = d.getMonth() + 1;
@@ -71,13 +72,13 @@ function displayCenterInfo(result, status) {
     	if(dd < 10){
     		dd = '0'+dd;
     	}
+    	//var currency_date = 20190406;
     	var currency_date = year+m+dd;
     	var currency_month = year+m;
-    	
     	var festivalPosition = [new daum.maps.LatLng(result[0].y, result[0].x)];
     	$.ajax({
     		url:'get.aroundEvent',
-    		data:{ge_start_date:currency_date, ge_end_date:currency_month},
+    		data:{ge_start_date:currency_month},
     		type:'post',
     		success:function(data){
     			if(data.events.length != 0){
@@ -85,12 +86,14 @@ function displayCenterInfo(result, status) {
     				var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
     				var tempLocate;
     				var festivalLoc;
+    				var tempDate;
     				for(var i = 0; i < data.events.length; i++){
     					tempLocate = data.events[i].ge_addr.split(" ");
-    					festivalLoc = tempLocate[0]+" "+tempLocate[1];
+    					festivalLoc = tempLocate[0];
+    					//+" "+tempLocate[1];
+    					tempDate = data.events[i].ge_start_date;
     					
-    					if(festivalLoc == locate){
-    						
+    					if(festivalLoc == locate && tempDate == currency_date){
     						var imageSize = new daum.maps.Size(24, 35); 
     						var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize); 
     						
