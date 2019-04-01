@@ -1,3 +1,4 @@
+update gov_event set ge_addr='부산광역시 해운대구 송정동' where ge_title='송정 정월대보름축제 2019';
 select * from GOV_EVENT order by ge_area_code;
 
 select * from gov_event where ge_title like '%'||'서대문, 1919 그날의 함성!'||'%';
@@ -8,3 +9,5 @@ select * from gov_event where ge_title like '%'||'서대문, 1919 그날의 함�
 
 select * from gov_event where ge_title like
 		'%'||'페스티'||'%' or ge_addr like '%'||'null'||'%' order by ge_area_code;
+
+select * from google_place_8;

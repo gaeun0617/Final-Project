@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.soldesk.festival.calendar.CalendarDAO;
 import com.soldesk.festival.calendar.EventBean;
 import com.soldesk.festival.calendar.Events;
+import com.soldesk.festival.place.GooglePlaceDAO;
+import com.soldesk.festival.place.GooglePlaces;
 import com.soldesk.festival.search.Search;
 import com.soldesk.festival.search.SearchDAO;
 import com.soldesk.festival.search.Searchs;
@@ -22,6 +24,8 @@ public class HomeController {
 	private SearchDAO sDAO;
 	@Autowired
 	private CalendarDAO cDAO;
+	@Autowired
+	private GooglePlaceDAO gDAO;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req) {
@@ -56,6 +60,11 @@ public class HomeController {
 	public String goDetail(Search s, HttpServletRequest req) {
 		req.setAttribute("contentPage", "detail.jsp");
 		return "index";
+	}
+	
+	@RequestMapping(value="/get.place1",method=RequestMethod.GET, produces="application/json; charset=utf-8")
+	public @ResponseBody GooglePlaces getGooglePlace1(){
+		return gDAO.getGooglePlace1();
 	}
 	
 	@RequestMapping(value = "/get.calendar", method = RequestMethod.GET)
