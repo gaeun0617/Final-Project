@@ -1,1 +1,0 @@
-select * from google_place_1;

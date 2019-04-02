@@ -8,7 +8,14 @@
 </head>
 <body>
 	<div id="detail_info">
-		<div id='map' style="width:300px; height:300px;"></div>
+		<div id='titleArea_1'></div>
+		<div id='imgArea'></div>
+		<div id='overviewArea'></div>
+		<div id='infoArea'>
+			<ul></ul>
+		</div>
+		<div id='titleArea_2'>지도</div>
+		<div id='map' style="width: 100%; height: 300px;"></div>
 	</div>
 	<script type="text/javascript">
 		get_details();
