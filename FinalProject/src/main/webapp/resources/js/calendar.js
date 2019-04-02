@@ -1,6 +1,6 @@
 function calendar_init() {
 	$("body").css('max-height','100%').css('overflow','hidden');
-	$(".contentBody").css('height','100%').css('overflow','auto');
+	$(".contentBody").css('height','100%').css('overflow','none');
 	$("#dialog_field").hide();
 	
 	click_calendar_date();
@@ -17,14 +17,19 @@ function click_calendar_date() {
 function dialog_paint(flag) {
 	if (flag == 1) {
 		$("#dialog_field").show().css("background-color","#FAFAFA");
-		$("#calendar").css("background-color", "#9E9E9E");
-		$("#dates").css("background-color", "#9E9E9E");
-		$("#monthField").css("background-color", "#9E9E9E");
+		$(".contentBody").css("background-color","#9E9E9E");
+		$("#calendar").css("background-color","#9E9E9E");
+		$("#dates").css("background-color","#9E9E9E");
+		$(".week_character").css("background-color","#9E9E9E");
+		$(".date_div").css("background-color","#9E9E9E");
+		
 	} else if (flag == 2) {
 		$("#dialog_field").hide();
-		$("#calendar").css("background-color", "white");
-		$("#dates").css("background-color", "white");
-		$("#monthField").css("background-color", "white");
+		$(".contentBody").css("background-color","#FFFFFF");
+		$("#calendar").css("background-color","#FFFFFF");
+		$("#dates").css("background-color","#FFFFFF");
+		$(".week_character").css("background-color","#FFFFFF");
+		$(".date_div").css("background-color","#FFFFFF");
 	}
 }
 function make_select() {
