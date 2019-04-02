@@ -62,9 +62,9 @@ public class HomeController {
 		return "index";
 	}
 	
-	@RequestMapping(value="/get.place1",method=RequestMethod.GET, produces="application/json; charset=utf-8")
-	public @ResponseBody GooglePlaces getGooglePlace1(){
-		return gDAO.getGooglePlace1();
+	@RequestMapping(value="/get.place",method=RequestMethod.GET, produces="application/json; charset=utf-8")
+	public @ResponseBody GooglePlaces getGooglePlace(HttpServletRequest req){
+		return gDAO.getGooglePlace(req);
 	}
 	
 	@RequestMapping(value = "/get.calendar", method = RequestMethod.GET)
