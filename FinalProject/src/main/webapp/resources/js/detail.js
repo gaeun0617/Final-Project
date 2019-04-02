@@ -60,12 +60,11 @@ function get_details() {
 function make_festival_marker(map, latitude, longitude, addr) {
 	// 마커를 생성합니다
 	var marker = new daum.maps.Marker({
+		map : map,
 		position : new daum.maps.LatLng(latitude, longitude),
 		title : addr
 	});
 
-	// 마커가 지도 위에 표시되도록 설정합니다
-	marker.setMap(map);
 }
 
 function select_google_place(addr) {
@@ -100,6 +99,11 @@ function search_province_in_festival(addr) {
 			$.each(data.places, function(i, f) {
 				if (addr.indexOf(f.gp_province) == 0) {
 					storename.push(f);
+					var td1 = $("<td></td>").append(f.gp_province);
+					var td2 = $("<td></td>").append(f.gp_storename);
+					var td3 = $("<td></td>").append(f.gp_star);
+					var tr = $("<tr></tr>").append(td1,td2,td3);
+					$("#place_info").append(tr);
 				}
 			});
 		}
@@ -119,34 +123,39 @@ function search_addr_by_keyword(map, keyword) {
 	// 키워드 검색 완료 시 호출되는 콜백함수 입니다
 	function placesSearchCB(data, status, pagination) {
 		if (status === daum.maps.services.Status.OK) {
-
-			// 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
-			// LatLngBounds 객체에 좌표를 추가합니다
-			var bounds = new daum.maps.LatLngBounds();
-
 			for (var i = 0; i < data.length; i++) {
 				displayMarker(data[i]);
-				bounds.extend(new daum.maps.LatLng(data[i].y, data[i].x));
 			}
-
 		}
 	}
-// 지도에 마커를 표시하는 함수입니다
-	function displayMarker(map,place) {
-		// 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
-		var infowindow = new daum.maps.InfoWindow({zIndex:1});
-		// 마커를 생성하고 지도에 표시합니다
-		var marker2 = new daum.maps.Marker({
-			map: map,
-			position: new daum.maps.LatLng(place.y, place.x) 
-		});
-		
-		// 마커에 클릭이벤트를 등록합니다
-		daum.maps.event.addListener(marker, 'click', function() {
-			// 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
-			infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
-			infowindow.open(map, marker);
-		});
-}
+	function displayMarker(place) {
+		var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+		var imageSize = new daum.maps.Size(24, 35); 
+		var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize); 
+	    var marker = new daum.maps.Marker({
+	        map: map,
+	        position: new daum.maps.LatLng(place.y, place.x), 
+	    	image : markerImage
+	    });
+	    
+	    // 마커에 커서가 오버됐을 때 마커 위에 표시할 인포윈도우를 생성합니다
+	    var iwContent = '<div style="padding:5px;">'+place.place_name+'</div>'; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
 
+	    // 인포윈도우를 생성합니다
+	    var infowindow = new daum.maps.InfoWindow({
+	        content : iwContent
+	    });
+
+	    // 마커에 마우스오버 이벤트를 등록합니다
+	    daum.maps.event.addListener(marker, 'mouseover', function() {
+	      // 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+	        infowindow.open(map, marker);
+	    });
+
+	    // 마커에 마우스아웃 이벤트를 등록합니다
+	    daum.maps.event.addListener(marker, 'mouseout', function() {
+	        // 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
+	        infowindow.close();
+	    });
+	}
 }

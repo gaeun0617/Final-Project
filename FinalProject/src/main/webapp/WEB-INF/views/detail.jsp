@@ -15,7 +15,16 @@
 			<ul></ul>
 		</div>
 		<div id='titleArea_2'>지도</div>
-		<div id='map' style="width: 100%; height: 300px;"></div>
+		<div id='map' style="width: 500px; height: 300px;"></div>
+		<div id='googlePlaceArea' >
+			<table id="place_info" style="border: 1px;">
+				<tr>
+					<td>지역</td>
+					<td>가게명</td>
+					<td>별점</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 	<script type="text/javascript">
 		get_details();

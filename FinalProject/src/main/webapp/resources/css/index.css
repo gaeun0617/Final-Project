@@ -17,22 +17,24 @@
 /* PC웹 */
 @media only screen and (min-width: 768px) {
 	html, body {
-		margin: 0px;
-		padding: 0px;
+		margin: 0;
+		padding: 0;
 		height:100%;
 		background-color: #FFFFFF;
 	}
 	.wrapper {
-		height: 100%;
 		display: grid;
 		grid-template-rows: 10% 90%;
 	}
-	.contentBody {
+	.contentBody{
+		display:grid;
+		grid-template-columns:1fr 1028px 1fr;
+	}
+	.contentMargin {
 		display: flex;
 		flex-direction: column;
 		text-align: center;
 		width: 100%;
-		height: 100%;
 		overflow: auto;
 	}
 	.header {
@@ -149,7 +151,6 @@
 	}
 	.wrapper {
 		background-color: #FFFFFF;
-		height: 100%;
 		display: grid;
 		grid-template-rows: 9% 82% 9%;
 	}
@@ -173,7 +174,10 @@
 	#imgIconTd {
 		display: none;
 	}
-	.contentBody {
+	.bodyMargin{
+		display:none;
+	}
+	.contentMargin {
 		display: flex;
 		flex-direction: column;
 		text-align: center;

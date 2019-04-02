@@ -24,6 +24,8 @@
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=af027ae344faba2343cf42cebbdc4728&libraries=services"></script>
 <script type="text/javascript">
 	$(function() {
+		var height = $(window).height();
+		$(".wrapper").css("height", height);
 		$(".tabSlideManu").hide();
 		$("#imgStyle").click(function() {
 			$(".tabSlideManu").animate({
@@ -61,7 +63,11 @@
 			</div>
 		</div>
 		<div class='contentBody'>
-			<jsp:include page="${contentPage }"></jsp:include>
+			<span class="bodyMargin"></span>
+			<span class="contentMargin">
+				<jsp:include page="${contentPage }"></jsp:include>
+			</span>
+			<span class="bodyMargin"></span>
 		</div>
 		<div class='footer'>
 			<table class="manuTable">
