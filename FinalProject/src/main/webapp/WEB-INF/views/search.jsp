@@ -50,13 +50,13 @@
 </script>
 </head>
 <body>
-	<span class="categoryArea">
+	<div class="categoryArea">
 		<select name="category" id="input_category">
 			<option value='category'>-- 분류 --</option>
 			<option id="op1" value="key">키워드</option>
 			<option id="op2" value="address">지역</option>
 		</select>
-	</span>
+	</div>
 	<div class='searchBar'>
 		<table class="searchTableArea">
 			<tr>

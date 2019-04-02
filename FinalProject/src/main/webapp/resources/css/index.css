@@ -46,8 +46,8 @@
 		width: 95%;
 	}
 	.webTitleArea {
-		font-family: TitleText;
-		font-size: 30px;
+		font-family: BaminDohyeon;
+		font-size: 35px;
 		padding: 10px;
 	}
 	#imgIconTd {
@@ -128,8 +128,9 @@
 	}
 	.mainVideo {
 		margin: 0;
-		width: 150%;
-		height: 200%;
+		margin-top: 10px;
+		width: 700px;
+		height: 430px;
 	}
 }
 
@@ -256,7 +257,7 @@
 }
 
 /* 모바일 */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 762px) {
 	::-webkit-scrollbar {
 		display: none;
 	}
@@ -351,7 +352,7 @@
 	.mainVideo {
 		margin:0;
 		width: 98%;
-		height: 330px;
+		height: 180px;
 		
 	}
 	.detailPageArea{
