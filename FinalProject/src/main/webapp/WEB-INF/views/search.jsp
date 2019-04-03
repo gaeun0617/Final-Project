@@ -14,7 +14,7 @@
 				submit = {ge_title : keyword, ge_addr:'null'};
 			}else if($("#input_category").val() == 'address') {
 				submit = {ge_title:'null', ge_addr : keyword};
-			}else if($("#input_category").val() == 'category'){
+			}else if($("#input_category").val() == 'category') {
 				submit = {ge_title:'null', ge_addr : 'null'};
 			}
 			$.ajax({
