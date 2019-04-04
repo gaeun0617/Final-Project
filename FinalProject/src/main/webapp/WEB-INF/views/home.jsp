@@ -44,13 +44,31 @@
 				<li style="cursor: pointer;">
 					<img src="resources/img/gw.jpg" title="맹방유채꽃축제">
 				</li>
+				<li style="cursor: pointer;">
+					<img src="resources/img/incheon.JPG" title="진달래축제">
+				</li>
+				<li style="cursor: pointer;">
+					<img src="resources/img/daejeon.JPG" title="아트페스티벌">
+				</li>
+				<li style="cursor: pointer;">
+					<img src="resources/img/chungbuk.JPG" title="청풍호">
+				</li>
+				<li style="cursor: pointer;">
+					<img src="resources/img/chungnam.JPG" title="수선화">
+				</li>
+				<li style="cursor: pointer;">
+					<img src="resources/img/gyeongbuk.JPG" title="문경전통찻사발축제">
+				</li>
+				<li style="cursor: pointer;">
+					<img src="resources/img/gyeongnam.JPG" title="유채축제">
+				</li>
 			</ul>
 		</div>
 		<div class="mediaFrame">
 			<h3 class="introduceTitle">이 주의 핫 페스티벌!</h3>
 			<div class="mainVideoArea">
-				<iframe height="180px" src="https://www.youtube.com/embed/f3LLSN80KQM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</div>		
+				<iframe class="mainVideo" src="https://www.youtube.com/embed/f3LLSN80KQM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
 		</div>
 	</div>
 </body>

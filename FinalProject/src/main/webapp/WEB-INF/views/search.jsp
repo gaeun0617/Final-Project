@@ -14,7 +14,7 @@
 				submit = {ge_title : keyword, ge_addr:'null'};
 			}else if($("#input_category").val() == 'address') {
 				submit = {ge_title:'null', ge_addr : keyword};
-			}else if($("#input_category").val() == 'category'){
+			}else if($("#input_category").val() == 'category') {
 				submit = {ge_title:'null', ge_addr : 'null'};
 			}
 			$.ajax({
@@ -50,13 +50,13 @@
 </script>
 </head>
 <body>
-	<span class="categoryArea">
+	<div class="categoryArea">
 		<select name="category" id="input_category">
 			<option value='category'>-- 분류 --</option>
 			<option id="op1" value="key">키워드</option>
 			<option id="op2" value="address">지역</option>
 		</select>
-	</span>
+	</div>
 	<div class='searchBar'>
 		<table class="searchTableArea">
 			<tr>

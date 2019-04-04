@@ -15,25 +15,26 @@ function get_details() {
 						var title = $(s).find("ge_title").text();
 						$("#titleArea_1").text(title);
 						var img_url = $(s).find("ge_image").text();
-						var img = $("<img>").attr("src", img_url).css(
-								"max-width", "100%");
+						var img = $("<img>").attr("src", img_url);
 						$("#imgArea").append(img);
 						var overview = $(s).find("ge_overview").text();
 						$("#overviewArea").html(overview);
 						var start_date = $(s).find("ge_start_date").text();
 						var start_date_span = $("<span></span>").text(
 								start_date);
-						var li_1 = $("<li>").append("<span>시작일</span>",
+						var li_1 = $("<li>").append("<strong>시작일</strong>",
 								start_date_span);
 						var end_date = $(s).find("ge_end_date").text();
 						var end_date_span = $("<span></span>").text(end_date);
-						var li_2 = $("<li>").append("<span>종료일</span>",
+						var li_2 = $("<li>").append("<strong>종료일</strong>",
 								end_date_span);
 						var addr = $(s).find("ge_addr").text();
+						addr2 = addr.split(" ");
+						$("#titleArea_2").append(addr2[0]+" "+addr2[1]+" "+"맛집");
 						var addr_span = $("<span></span>").text(addr);
-						var li_3 = $("<li>").append("<span>주소</span>",
+						var li_3 = $("<li>").append("<strong>주소</strong>",
 								addr_span);
-						$("#infoArea ul").append(li_1, li_2, li_3);
+						$("#info ul").append(li_1, li_2, li_3);
 
 						var latitude = $(s).find("ge_map_y").text();
 						var longitude = $(s).find("ge_map_x").text();
@@ -97,13 +98,11 @@ function search_province_in_festival(addr) {
 		async : false,
 		success : function(data) {
 			$.each(data.places, function(i, f) {
-				if (addr.indexOf(f.gp_province) == 0) {
-					storename.push(f);
-					var td1 = $("<td></td>").append(f.gp_province);
-					var td2 = $("<td></td>").append(f.gp_storename);
-					var td3 = $("<td></td>").append(f.gp_star);
-					var tr = $("<tr></tr>").append(td1,td2,td3);
-					$("#place_info").append(tr);
+				if (addr.indexOf(f.gp_province) == 0){
+					var span1 = $("<span class='place_name'></span>").append(f.gp_storename);
+					var span2 = $("<span class='place_star'></span>").append(f.gp_star);
+					var div = $("<div></div>").append(span1,span2);
+					$("#googlePlaceArea").append(div);
 				}
 			});
 		}
@@ -139,7 +138,7 @@ function search_addr_by_keyword(map, keyword) {
 	    });
 	    
 	    // 마커에 커서가 오버됐을 때 마커 위에 표시할 인포윈도우를 생성합니다
-	    var iwContent = '<div style="padding:5px;">'+place.place_name+'</div>'; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+	    var iwContent = '<div style="padding:5px;">'+place.place_name+'</div>';
 
 	    // 인포윈도우를 생성합니다
 	    var infowindow = new daum.maps.InfoWindow({

@@ -2,8 +2,8 @@ var map;
 
 function makeMap(){
 	
-	var locPosition;
-	var object;
+	var locPosition = undefined;
+	var object = undefined;
 	
 //HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
 	if (navigator.geolocation) {
@@ -120,10 +120,12 @@ function displayCenterInfo(result, status) {
     }    
 }
 function makeTable(festival, distance){
-	var img = $("<div class='aroundImg'><img src='"+festival.ge_image+"'></div>");
 	var title = $("<div class='aroundTitle'></div>").text(festival.ge_title);
+	title.click(function() {
+		goDetail(festival.ge_title);
+	});
 	var distance = $("<div class='aroundDistance'></div>").text("거리 : "+distance+"m");
-	var aroundFestivals = $("<div class='aroundFestivals'></div>").append(img, title, distance);
+	var aroundFestivals = $("<div class='aroundFestivals'></div>").append(title, distance);
 	$(".aroundFestivalTable").append(aroundFestivals);
 }
 

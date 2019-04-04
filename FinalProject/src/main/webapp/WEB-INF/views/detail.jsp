@@ -12,18 +12,16 @@
 		<div id='imgArea'></div>
 		<div id='overviewArea'></div>
 		<div id='infoArea'>
-			<ul></ul>
+			<div id="info">
+				<ul></ul>
+			</div>
 		</div>
-		<div id='titleArea_2'>지도</div>
-		<div id='map' style="width: 500px; height: 300px;"></div>
-		<div id='googlePlaceArea' >
-			<table id="place_info" style="border: 1px;">
-				<tr>
-					<td>지역</td>
-					<td>가게명</td>
-					<td>별점</td>
-				</tr>
-			</table>
+		<div id='titleArea_2'></div>
+		<div id='map' style="width: 100%; height: 300px;"></div>
+		<div id='googlePlaceArea'>
+			<div>
+				<span class="place_name">이름</span><span class="place_star">별점</span>
+			</div>
 		</div>
 	</div>
 	<script type="text/javascript">
