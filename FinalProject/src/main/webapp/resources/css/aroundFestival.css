@@ -6,19 +6,17 @@
 	grid-row-gap:20px;
 }
 #map{
-	margin:auto;
-	width:90%;
+	width:100%;
 	height:100%;
 }
 .aroundFestivalTable{
 	font-family: NanumGothic;
 	text-align:left;
-	padding-left:20px;
-	
+	overflow:auto;
 }
 .aroundFestivals{
 	height:150px;
-	border:2px solid #039BE5;
+	border:2px solid #3d3d3d;
 	margin-bottom:5px;
 	display:grid;
 	grid-template-columns:40% 40% 20%;
@@ -30,7 +28,7 @@
 	align-content:center;
 	justify-content:center;
 	padding-right:5%;
-	border-right:2px solid #039BE5;
+	border-right:2px solid #3d3d3d;
 }
 .aroundImg img{
 	width:100%;
@@ -39,7 +37,7 @@
 .aroundTitle{
 	height:100%;
 	width:95%;
-	border-right:2px solid #039BE5;
+	border-right:2px solid #3d3d3d;
 	display:flex;
 	align-items:center;
 	padding-left:5%;
