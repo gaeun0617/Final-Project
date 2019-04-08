@@ -2,14 +2,18 @@ function calendar_init() {
 	$("body").css('max-height','100%').css('overflow','hidden');
 	$(".contentBody").css('height','100%').css('overflow','none');
 	$("#dialog_field").hide();
-	
+	var device = $(window).width();
 	click_calendar_date();
-	make_date();
+	if(device > 768){	
+		make_date();
+	}else{
+		
+	}
 	dialog_click_event();
 	get_festivalTitle();
 }
 function click_calendar_date() {
-	$(".current").click(function() {
+	$(document).on("click touchend", ".current", function(){
 		dialog_paint(1);
 		make_select();
 	});
@@ -137,25 +141,25 @@ function show_calendar(y, m, d) {
 	for(var i = 0; i < 7; i++){
 		switch (i) {
 			case 0:
-				var td = $("<span class='day_of_the_week'></span>").text('일').css('color', 'red');
+				var td = $("<span class='day_of_the_week'></span>").text('SUN').css('color', 'red');
 				break;
 			case 1:
-				var td = $("<span class='day_of_the_week'></span>").text('월');
+				var td = $("<span class='day_of_the_week'></span>").text('MON').css("color","#3d3d3d");
 				break;
 			case 2:
-				var td = $("<span class='day_of_the_week'></span>").text('화');
+				var td = $("<span class='day_of_the_week'></span>").text('TUE').css("color","#3d3d3d");
 				break;
 			case 3:
-				var td = $("<span class='day_of_the_week'></span>").text('수');
+				var td = $("<span class='day_of_the_week'></span>").text('WEN').css("color","#3d3d3d");
 				break;
 			case 4:
-				var td = $("<span class='day_of_the_week'></span>").text('목');
+				var td = $("<span class='day_of_the_week'></span>").text('THU').css("color","#3d3d3d");
 				break;
 			case 5:
-				var td = $("<span class='day_of_the_week'></span>").text('금');
+				var td = $("<span class='day_of_the_week'></span>").text('FIR').css("color","#3d3d3d");
 				break;
 			case 6:
-				var td = $("<span class='day_of_the_week'></span>").text('토');
+				var td = $("<span class='day_of_the_week'></span>").text('SAT').css('color', '#000374');
 				break;
 		}
 		week_character.append(td);
@@ -179,7 +183,13 @@ function show_calendar(y, m, d) {
 						if(start > 10){
 							start = 1;	
 						}
-						var date_number = $("<span class='date_number'></span>").text(start);
+						if(j == 0){
+							var date_number = $("<span class='date_number'></span>").text(start).css("color","red");
+						}else if(j == 6){
+							var date_number = $("<span class='date_number'></span>").text(start).css("color","#000374");							
+						}else{
+							var date_number = $("<span class='date_number'></span>").text(start);														
+						}
 						var date_div = $("<div class='date_div'></span>").append(date_number);
 						
 						temp = temp_date(y,m,start);
@@ -218,7 +228,13 @@ function show_calendar(y, m, d) {
 					if(d < start){
 						if(i == 1){
 							start = 1;
-							var date_number = $("<span class='date_number'></span>").text(start);
+							if(j == 0){
+								var date_number = $("<span class='date_number'></span>").text(start).css("color","red");
+							}else if(j == 6){
+								var date_number = $("<span class='date_number'></span>").text(start).css("color","#000374");							
+							}else{
+								var date_number = $("<span class='date_number'></span>").text(start);														
+							}
 							var date_div = $("<div class='date_div'></span>").append(date_number);
 						}else{
 							start = 1;
@@ -227,7 +243,13 @@ function show_calendar(y, m, d) {
 							flag = true;
 						}
 					}else{
-						var date_number = $("<span class='date_number'></span>").text(start);
+						if(j == 0){
+							var date_number = $("<span class='date_number'></span>").text(start).css("color","red");
+						}else if(j == 6){
+							var date_number = $("<span class='date_number'></span>").text(start).css("color","#000374");							
+						}else{
+							var date_number = $("<span class='date_number'></span>").text(start);														
+						}
 						var date_div = $("<div class='date_div'></span>").append(date_number);
 					}
 					if(flag != true){
@@ -328,7 +350,7 @@ function temp_date(y,m,start){
 
 // title클릭 시 상세페이지로
 function get_festivalTitle(){
-	$(document).on("click", ".title_span", function(){
+	$(document).on("click touchend", ".title_span", function(){
 		var title = $(this).text();
 		goDetail(title);
 	});
