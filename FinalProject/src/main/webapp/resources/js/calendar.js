@@ -13,7 +13,7 @@ function calendar_init() {
 	get_festivalTitle();
 }
 function click_calendar_date() {
-	$(".current").click(function() {
+	$(document).on("click touchend", ".current", function(){
 		dialog_paint(1);
 		make_select();
 	});
@@ -350,7 +350,7 @@ function temp_date(y,m,start){
 
 // title클릭 시 상세페이지로
 function get_festivalTitle(){
-	$(document).on("click", ".title_span", function(){
+	$(document).on("click touchend", ".title_span", function(){
 		var title = $(this).text();
 		goDetail(title);
 	});
