@@ -2,7 +2,7 @@ function get_details() {
 
 	var para = document.location.href.split("?");
 	para = decodeURI(para[1]);
-	title = para.split("=");
+	var title = para.split("=");
 
 	$.ajax({
 		url : "detail.get",
@@ -29,13 +29,12 @@ function get_details() {
 						var li_2 = $("<li>").append("<strong>종료일</strong>",
 								end_date_span);
 						var addr = $(s).find("ge_addr").text();
-						addr2 = addr.split(" ");
-						$("#titleArea_2").append(addr2[0]+" "+addr2[1]+" "+"맛집");
 						var addr_span = $("<span></span>").text(addr);
 						var li_3 = $("<li>").append("<strong>주소</strong>",
 								addr_span);
 						$("#info ul").append(li_1, li_2, li_3);
-
+						var addr2 = addr.split(" ");
+						$("#titleArea_2").append(addr2[0]+" "+addr2[1]+" "+"맛집");
 						var latitude = $(s).find("ge_map_y").text();
 						var longitude = $(s).find("ge_map_x").text();
 						var container = document.getElementById('map');
@@ -99,6 +98,7 @@ function search_province_in_festival(addr) {
 		success : function(data) {
 			$.each(data.places, function(i, f) {
 				if (addr.indexOf(f.gp_province) == 0){
+					storename.push(f);
 					var span1 = $("<span class='place_name'></span>").append(f.gp_storename);
 					var span2 = $("<span class='place_star'></span>").append(f.gp_star);
 					var div = $("<div></div>").append(span1,span2);
@@ -136,6 +136,20 @@ function search_addr_by_keyword(map, keyword) {
 	        position: new daum.maps.LatLng(place.y, place.x), 
 	    	image : markerImage
 	    });
+	    
+	    $(document).on("click touchend", ".place_name", function(e) {
+			e.stopPropagation();
+	    	if (name == place.place_name){
+	    		// 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+	            // LatLngBounds 객체에 좌표를 추가합니다
+	            var bounds = new daum.maps.LatLngBounds();
+
+                bounds.extend(new daum.maps.LatLng(place.y, place.x));
+
+	            // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+	            map.setBounds(bounds);
+	        } 
+		});
 	    
 	    // 마커에 커서가 오버됐을 때 마커 위에 표시할 인포윈도우를 생성합니다
 	    var iwContent = '<div style="padding:5px;">'+place.place_name+'</div>';

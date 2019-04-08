@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 /* 모바일 버전  */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
 	.categoryArea{
 		width: 98%;
 		height: 50px;
