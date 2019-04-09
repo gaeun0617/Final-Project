@@ -147,6 +147,7 @@ function search_addr_by_keyword(map, keyword) {
 
                 bounds.extend(new daum.maps.LatLng(place.y, place.x));
 
+               
 	            // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
 	            map.setBounds(bounds);
 	        } 
