@@ -2,13 +2,8 @@ function calendar_init() {
 	$("body").css('max-height','100%').css('overflow','hidden');
 	$(".contentBody").css('height','100%').css('overflow','none');
 	$("#dialog_field").hide();
-	var device = $(window).width();
 	click_calendar_date();
-	if(device > 768){	
-		make_date();
-	}else{
-		
-	}
+	make_date();
 	dialog_click_event();
 	get_festivalTitle();
 }
