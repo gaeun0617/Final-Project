@@ -1,10 +1,9 @@
 var map;
+var locPosition;
+var object;
 
 function makeMap(){
-	
-	var locPosition;
-	var object;
-	
+		
 //HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
 	if (navigator.geolocation) {
 		// GeoLocation을 이용해서 접속 위치를 얻어옵니다
@@ -12,7 +11,6 @@ function makeMap(){
 			var lat = position.coords.latitude, // 위도
 			lon = position.coords.longitude; // 경도
 			locPosition = new daum.maps.LatLng(lat, lon); // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
-			alert(locPosition);
 			object = showLocate(locPosition);
 			var markerPosition  = new daum.maps.LatLng(lat, lon); 
 
@@ -30,11 +28,11 @@ function makeMap(){
 		
 	}
 	else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
-		
 		locPosition = new daum.maps.LatLng(33.450701, 126.570667);
 		object = showLocate(locPosition);
 		searchAddrFromCoords(object.g, locPosition);
 	}
+	
 }
 function showLocate(locPosition){
 	var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
