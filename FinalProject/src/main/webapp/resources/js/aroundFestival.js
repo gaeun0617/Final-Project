@@ -71,8 +71,8 @@ function displayCenterInfo(result, status) {
     	if(dd < 10){
     		dd = '0'+dd;
     	}
-    	var currency_date = 20190406;
-    	//var currency_date = year+m+dd;
+    	//var currency_date = 20190406;
+    	var currency_date = year+m+dd;
     	var currency_month = year+m;
     	var festivalPosition = [new daum.maps.LatLng(result[0].y, result[0].x)];
     	$.ajax({
@@ -127,6 +127,15 @@ function makeTable(festival, distance){
 	var distance = $("<div class='aroundDistance'></div>").text("거리 : "+distance+"m");
 	var aroundFestivals = $("<div class='aroundFestivals'></div>").append(title, distance);
 	$(".aroundFestivalTable").append(aroundFestivals);
+}
+
+function click_table(){
+	$(document).on("click touchend", ".aroundFestivals", function(e){
+		e.stopPropagation();
+		var td = $(this);
+		var title = td.children(".aroundTitle").text();
+		goDetail(title);
+	});
 }
 
    

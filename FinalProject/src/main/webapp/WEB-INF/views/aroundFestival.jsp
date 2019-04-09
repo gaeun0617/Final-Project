@@ -19,7 +19,8 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		makeMap()
+		makeMap();
+		click_table();
 	</script>
 </body>
 </html>

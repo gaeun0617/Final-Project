@@ -139,6 +139,7 @@ function search_addr_by_keyword(map, keyword) {
 	    
 	    $(document).on("click touchend", ".place_name", function(e) {
 			e.stopPropagation();
+			var name = $(this).text();
 	    	if (name == place.place_name){
 	    		// 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
 	            // LatLngBounds 객체에 좌표를 추가합니다
