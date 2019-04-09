@@ -144,10 +144,7 @@ function search_addr_by_keyword(map, keyword) {
 	    		// 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
 	            // LatLngBounds 객체에 좌표를 추가합니다
 	            var bounds = new daum.maps.LatLngBounds();
-
                 bounds.extend(new daum.maps.LatLng(place.y, place.x));
-
-               
 	            // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
 	            map.setBounds(bounds);
 	        } 
