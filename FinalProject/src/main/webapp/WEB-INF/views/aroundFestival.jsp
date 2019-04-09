@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="resources/css/aroundFestival.css">
 <script type="text/javascript" src="resources/js/aroundFestival.js"></script>
 <title>Insert title here</title>
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=af027ae344faba2343cf42cebbdc4728&libraries=services"></script>
 </head>
 <body>
 	<div class="aroundWrapper">
