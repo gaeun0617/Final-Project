@@ -132,7 +132,6 @@ function show_calendar(y, m, d) {
 
 	var week_character = $("<div class='week_character'></div>");
 
-
 	for(var i = 0; i < 7; i++){
 		switch (i) {
 			case 0:
