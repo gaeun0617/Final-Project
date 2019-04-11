@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	$(function(){
+		$(".contentMargin").css({"max-width":"100%", "max-height":"100%", "display":"grid", "grid-template-rows":"20% 78%", "grid-row-gap":"5px"});
 		$("#searchInput").keyup(function(e){
 			var keyword = $("#searchInput").val();
 			var submit = {};
@@ -41,8 +42,7 @@
 						goDetail(text);
 					});
 					
-					var win = $(window).width();
-					$(".searchResultTable").css("width", win + "px").css("border-collapse","collapse");
+					$(".searchResultTable").css("border-collapse","collapse");
 				}
 			});
 		});
@@ -50,26 +50,28 @@
 </script>
 </head>
 <body>
-	<div class="categoryArea">
-		<select name="category" id="input_category">
-			<option value='category'>-- 분류 --</option>
-			<option id="op1" value="key">키워드</option>
-			<option id="op2" value="address">지역</option>
-		</select>
-	</div>
-	<div class='searchBar'>
-		<table class="searchTableArea">
-			<tr>
-				<td align="center"><input id="searchInput" name="ge_title"
-					placeholder="내용 입력" autocomplete="off"></td>
-				<td align="center">
-					<button id="searchBtn">
-						<img src="resources/img/search.png" id="searchIcon" width="40px"
-							height="40px">
-					</button>
-				</td>
-			</tr>
-		</table>
+	<div class='searchArea'>
+		<div class="categoryArea">
+			<select name="category" id="input_category">
+				<option value='category'>-- 분류 --</option>
+				<option id="op1" value="key">키워드</option>
+				<option id="op2" value="address">지역</option>
+			</select>
+		</div>
+		<div class='searchBar'>
+			<table class="searchTableArea">
+				<tr>
+					<td align="center"><input id="searchInput" name="ge_title"
+						placeholder="내용 입력" autocomplete="off"></td>
+					<td align="center">
+						<button id="searchBtn">
+							<img src="resources/img/search.png" id="searchIcon" width="40px"
+								height="40px">
+						</button>
+					</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 	<div class="searchResultArea">
 		<table class="searchResultTable"></table>

@@ -301,33 +301,7 @@ function showCalendarMoblie(y, m, d){
 	//전 달 마지막 날
 	var ld = last_day(y, m, d);
 	var day = ld[0] + 1;
-	//토요일 기준 찾기
-//	var coloredDayTemp;
-//	
-//	switch(day){
-//	case 0:
-//		coloredDayTemp = 6;
-//		break;
-//	case 1:
-//		coloredDayTemp = 5;
-//		break;
-//	case 2:
-//		coloredDayTemp = 4;
-//		break;
-//	case 3:
-//		coloredDayTemp = 3;
-//		break;
-//	case 4:
-//		coloredDayTemp = 2;
-//		break;
-//	case 5:
-//		coloredDayTemp = 1;
-//		break;
-//	case 6:
-//		coloredDayTemp = 0;
-//		break;
-//	}
-	
+
 	var lastDay = check_month(m);
 
 	if (day == 7) {
