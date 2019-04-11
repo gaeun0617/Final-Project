@@ -339,7 +339,7 @@ function showCalendarMoblie(y, m, d){
 	for(var i = 1; i < (lastDay+1); i++){
 		
 		var dateField = $("<div class='dateField'></div>").css({'display':'grid','grid-template-columns':'20% 80%', 'height':'200px', 'border-bottom':'1px dashed #ccc'});
-		var date = $("<div class='dateNum'></div>").text(i).css({'border-right':'1px dashed #ccc','text-align':'right', 'padding-top':'20px', 'padding-right':'20px', 'font-size':'18px', 'font-family':'NanumGothic'});			
+		var date = $("<div class='dateNum'></div>").text(i).css({'border-right':'1px dashed #ccc','text-align':'right', 'padding-top':'20px', 'padding-right':'20px', 'font-size':'18px'});			
 		var titleDiv = $("<div class='titleDiv'></div>");
 		temp = temp_date(y, m, i);
 		$.each(events.events, function(i, e){
