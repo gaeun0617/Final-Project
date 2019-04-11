@@ -140,46 +140,33 @@
 
 @media only screen and (max-width: 768px) {
 	#dates {
-		display: grid;
-		grid-template-columns: 10% 90%;
+		display: flex;
+		flex-direction:column;
+		overflow:auto;
+		max-width:100%;
 		height: 100%;
 		border: 2px solid black;
 	}
-	#monthField {
-		background-color: white;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		overflow: auto;
+	.dateField{
+		display:grid;
+		grid-template-columns:20% 80%;
+		height:200px;
+		max-width:100%;	
+		border-bottom:1px dashed #ccc;
 	}
-	.week_character {
-		display: grid;
-		border-bottom: 1px solid black;
-		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	.dateNum{
+		border-right:1px dashed #ccc;
+		text-align:right;
+		padding-top:20px;
+		padding-right:20px;
+		font-size:18px;
 		font-family: NanumGothic;
-		height: 100%;
-		width: 100%;
 	}
-	.day_of_the_week {
+	.titleDiv{
 		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-bottom: 1px solid black;
-		font-size: 20px;
-	}
-	.week_record {
-		display: grid;
-		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-		width: 100%;
-		height: 120%;
-	}
-	.date_div {
-		width: 100%;
-		height: 100%;
-		display: grid;
-		grid-template-rows: 10% 90%;
-		font-weight: bold;
-		border: 1px solid #ECEFF1;
+		flex-direction:column;
+		flex-wrap:wrap;
+		height:inherit;	
 	}
 	.title_span {
 		margin-top: 10px;
@@ -190,21 +177,6 @@
 		text-align: left;
 		padding: 0 15px;
 		color: #304FFE;
-	}
-	.title_div {
-		display: flex;
-		font-family: NanumGothic;
-		font-size: 60%;
-		flex-direction: column;
-		max-height: 100%;
-		max-width: 100%;
-		overflow: auto;
-	}
-	.date_number {
-		margin-top: 5px;
-		text-align: left;
-		padding-left: 10px;
-		font-size: 18px;
 	}
 	#dialog_field {
 		font-family: NanumGothic;

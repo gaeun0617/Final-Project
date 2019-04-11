@@ -2,10 +2,15 @@ function calendar_init() {
 	$("body").css('max-height','100%').css('overflow','hidden');
 	$(".contentBody").css('height','100%').css('overflow','none');
 	$("#dialog_field").hide();
+	var width = $(window).width();
+	var flag = 0;
+	if(width < 769){
+		flag = 1;
+	}
 	click_calendar_date();
-	make_date();
+	make_date(flag);
 	dialog_click_event();
-	get_festivalTitle();
+	get_festivalTitle();		
 }
 function click_calendar_date() {
 	$(document).on("click touchend", ".current", function(){
@@ -57,14 +62,14 @@ function dialog_click_event() {
 	$("#ok_btn_inDialog").click(function() {
 		var year = $("#select_want_year").val()
 		var month = $("#select_want_month").val()
-		make_date(year, month);
+		make_date(0, year, month);
 		dialog_paint(2)
 	});
 	$("#cancel_btn_inDialog").click(function() {
 		dialog_paint(2)
 	});
 }
-function make_date(y, m) {
+function make_date(flag, y, m) {
 
 	var d = new Date();
 	var cur_year;
@@ -86,7 +91,11 @@ function make_date(y, m) {
 	} else {
 		dates = check_month(cur_month);
 	}
-	show_calendar(cur_year, cur_month, dates)
+	if(flag == 1){
+		showCalendarMoblie(cur_year, cur_month, dates);
+	}else{		
+		show_calendar(cur_year, cur_month, dates);
+	}
 }
 // 윤년 체크
 function isLeap(y) {
@@ -162,7 +171,7 @@ function show_calendar(y, m, d) {
 	
 	var monthField = $("<div id='monthField'></div>");
 	
-	for(var i = 0; i < 6; i++){
+	for(var i = 0; i < 5; i++){
 		var week_record = $("<div class='week_record'></div>");
 		
 		for(var j = 0; j < 7; j++){
@@ -248,7 +257,6 @@ function show_calendar(y, m, d) {
 					}
 					if(flag != true){
 						temp = temp_date(y,m,start);
-						
 						var div = $("<div class='title_div'></div>");
 						$.each(events.events, function(i, e){
 							if(e.ge_start_date == temp){
@@ -281,6 +289,80 @@ function show_calendar(y, m, d) {
 	}
 	$("#dates").append(monthField);
 }
+function showCalendarMoblie(y, m, d){
+	$("#date").text(y + "." + m + "월");
+
+	//이벤트 받아오기
+	var events = send_controller(y, m);
+	var temp = '';
+	
+	var flag = false;
+	
+	//전 달 마지막 날
+	var ld = last_day(y, m, d);
+	var day = ld[0] + 1;
+	//토요일 기준 찾기
+//	var coloredDayTemp;
+//	
+//	switch(day){
+//	case 0:
+//		coloredDayTemp = 6;
+//		break;
+//	case 1:
+//		coloredDayTemp = 5;
+//		break;
+//	case 2:
+//		coloredDayTemp = 4;
+//		break;
+//	case 3:
+//		coloredDayTemp = 3;
+//		break;
+//	case 4:
+//		coloredDayTemp = 2;
+//		break;
+//	case 5:
+//		coloredDayTemp = 1;
+//		break;
+//	case 6:
+//		coloredDayTemp = 0;
+//		break;
+//	}
+	
+	var lastDay = check_month(m);
+
+	if (day == 7) {
+		day = 0;
+	}
+
+	$("#dates").empty();
+	
+	for(var i = 1; i < (lastDay+1); i++){
+		
+		var dateField = $("<div class='dateField'></div>").css({'display':'grid','grid-template-columns':'20% 80%', 'height':'200px', 'border-bottom':'1px dashed #ccc'});
+		var date = $("<div class='dateNum'></div>").text(i).css({'border-right':'1px dashed #ccc','text-align':'right', 'padding-top':'20px', 'padding-right':'20px', 'font-size':'18px', 'font-family':'NanumGothic'});			
+		var titleDiv = $("<div class='titleDiv'></div>");
+		temp = temp_date(y, m, i);
+		$.each(events.events, function(i, e){
+			if(e.ge_start_date == temp){
+				var title = e.ge_title;
+				titles = title.split(" ");
+				title = '';
+				for(var l = 0; l < (titles.length - 1); l++){
+					if(titles[l].indexOf("2019") == -1){
+						title += titles[l]+" ";
+					}else{
+						continue;
+					}
+				}
+				var title_span = $("<span class='title_span'></span>").text(title);
+				titleDiv.append(title_span).trigger("create");
+			}
+		});
+		dateField.append(date, titleDiv);
+		$("#dates").append(dateField).trigger("create");
+	}
+}
+
 // 전 달 마지막 요일 확인
 function last_day(y, m, d) {
 	var year = y;

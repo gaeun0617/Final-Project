@@ -45,6 +45,7 @@
 			<beans:list>
 				<beans:value>classpath:searchMapper.xml</beans:value>
 				<beans:value>classpath:CalendarMapper.xml</beans:value>
+				<beans:value>classpath:placeMapper.xml</beans:value>
 			</beans:list>
 		</beans:property>
 	</beans:bean>

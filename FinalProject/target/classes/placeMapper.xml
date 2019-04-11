@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.soldesk.festival.place.PlaceMapper">
+	<select id="searchPlace_1" resultType="com.soldesk.festival.place.GooglePlace">
+		select * from google_place_1
+	</select>
+	<select id="searchPlace_2" resultType="com.soldesk.festival.place.GooglePlace">
+		select * from google_place_2
+	</select>
+	<select id="searchPlace_3" resultType="com.soldesk.festival.place.GooglePlace">
+		select * from google_place_3
+	</select>
+	<select id="searchPlace_4" resultType="com.soldesk.festival.place.GooglePlace">
+		select * from google_place_4
+	</select>
+	<select id="searchPlace_5" resultType="com.soldesk.festival.place.GooglePlace">
+		select * from google_place_5
+	</select>
+	<select id="searchPlace_6" resultType="com.soldesk.festival.place.GooglePlace">
+		select * from google_place_6
+	</select>
+	<select id="searchPlace_7" resultType="com.soldesk.festival.place.GooglePlace">
+		select * from google_place_7
+	</select>
+</mapper>

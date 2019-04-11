@@ -3,7 +3,10 @@ var locPosition;
 var object;
 
 function makeMap(){
-		
+	
+	var locPosition = undefined;
+	var object = undefined;
+	
 //HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
 	if (navigator.geolocation) {
 		// GeoLocation을 이용해서 접속 위치를 얻어옵니다
@@ -22,7 +25,6 @@ function makeMap(){
 
 			// 마커가 지도 위에 표시되도록 설정합니다
 			marker.setMap(map);
-			
 			var location = searchAddrFromCoords(object.g, object.m.getCenter(), displayCenterInfo);
 		});
 		
@@ -57,7 +59,6 @@ function searchAddrFromCoords(geocoder, coords, callback) {
 function displayCenterInfo(result, status) {
     if (status === daum.maps.services.Status.OK) {
     	var locate = result[0].region_1depth_name;
-    	//+' '+result[0].region_2depth_name;
 
     	var d = new Date();
     	var year = d.getFullYear();
@@ -69,14 +70,18 @@ function displayCenterInfo(result, status) {
     	if(dd < 10){
     		dd = '0'+dd;
     	}
-    	var currency_date = 20190406;
-    	//var currency_date = year+m+dd;
+    	//var currency_date = 20190406;
+    	var currency_date = year+m+dd;
     	var currency_month = year+m;
     	var festivalPosition = [new daum.maps.LatLng(result[0].y, result[0].x)];
+    	
+    	var check = 0;
+    	
     	$.ajax({
     		url:'get.aroundEvent',
     		data:{ge_start_date:currency_month},
     		type:'post',
+    		async:false,
     		success:function(data){
     			if(data.events.length != 0){
     				//ge_map_x, ge_map_y
@@ -87,7 +92,6 @@ function displayCenterInfo(result, status) {
     				for(var i = 0; i < data.events.length; i++){
     					tempLocate = data.events[i].ge_addr.split(" ");
     					festivalLoc = tempLocate[0];
-    					//+" "+tempLocate[1];
     					tempDate = data.events[i].ge_start_date;
     					
     					if(festivalLoc == locate && tempDate == currency_date){
@@ -109,19 +113,33 @@ function displayCenterInfo(result, status) {
     							strokeOpacity:0
     						});
     						var distance = Math.round(polyline.getLength());
+    						check = 1;
     						makeTable(data.events[i], distance);
     					}
     				}			
     			}
     		}
     	});
+    	if(check == 0){
+			makeTable("축제 없음", undefined);		
+    	}
     }    
 }
 function makeTable(festival, distance){
-	var img = $("<div class='aroundImg'><img src='"+festival.ge_image+"'></div>");
-	var title = $("<div class='aroundTitle'></div>").text(festival.ge_title);
-	var distance = $("<div class='aroundDistance'></div>").text("거리 : "+distance+"m");
-	var aroundFestivals = $("<div class='aroundFestivals'></div>").append(img, title, distance);
+	var title;
+	var aroundFestivals;
+	var distance;
+	if(festival == "축제 없음"){
+		title = $("<div class='aroundTitle'></div>").text(festival).css("text-align","center").css("font-size","16pt");
+		aroundFestivals = $("<div class='aroundFestivals'></div>").append(title).css("display","block");
+	}else{		
+		title = $("<div class='aroundTitle'></div>").text(festival.ge_title);
+		title.click(function() {
+			goDetail(festival.ge_title);
+		});
+		distance = $("<div class='aroundDistance'></div>").text("거리 : "+distance+"m");
+		aroundFestivals = $("<div class='aroundFestivals'></div>").append(title, distance);
+	}
 	$(".aroundFestivalTable").append(aroundFestivals);
 }
 
@@ -130,7 +148,9 @@ function click_table(){
 		e.stopPropagation();
 		var td = $(this);
 		var title = td.children(".aroundTitle").text();
-		goDetail(title);
+		if(title != "축제 없음"){
+			goDetail(title);			
+		}
 	});
 }
 
