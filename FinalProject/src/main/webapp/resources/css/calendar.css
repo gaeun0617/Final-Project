@@ -4,19 +4,6 @@
 	display: none;
 }
 
-.calendarWrapper {
-	height: 100%;
-	width: 100%;
-}
-
-#calendar {
-	height: 95%;
-	width: 100%;
-	display: grid;
-	grid-template-rows: 10% 90%;
-	align-self: center;
-}
-
 #date {
 	border-bottom: 1px solid black;
 }
@@ -33,7 +20,17 @@
 	font-family: NanumGothic;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
+	.calendarWrapper {
+		height: 95%;
+		width: 100%;
+	}
+	#calendar {
+		height: 100%;
+		width: 100%;
+		display: grid;
+		grid-template-rows: 10% 90%;
+	}
 	#dates {
 		display: grid;
 		grid-template-rows: 10% 90%;
@@ -115,6 +112,9 @@
 		border: 2px solid black;
 		background-color: rgba(255, 255, 255, 0.5);
 	}
+	#dialog_header, #dialog_footer{
+		text-align:center;
+	}
 	#dialog_body, #dialog_footer {
 		font-family: NanumGothic;
 		display: grid;
@@ -139,34 +139,47 @@
 }
 
 @media only screen and (max-width: 768px) {
+	.calendarWrapper {
+		display: flex;
+		height: 100%;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+	}
+	#calendar {
+		height: 95%;
+		width: 95%;
+		display: grid;
+		grid-template-rows: 10% 90%;
+	}
 	#dates {
 		display: flex;
-		flex-direction:column;
-		overflow:auto;
-		max-width:100%;
+		flex-direction: column;
+		overflow: auto;
+		max-width: 100%;
 		height: 100%;
 		border: 2px solid black;
 	}
-	.dateField{
-		display:grid;
-		grid-template-columns:20% 80%;
-		height:200px;
-		max-width:100%;	
-		border-bottom:1px dashed #ccc;
+	.dateField {
+		display: grid;
+		grid-template-columns: 20% 80%;
+		height: 200px;
+		max-width: 100%;
+		border-bottom: 1px dashed #ccc;
 	}
-	.dateNum{
-		border-right:1px dashed #ccc;
-		text-align:right;
-		padding-top:20px;
-		padding-right:20px;
-		font-size:18px;
+	.dateNum {
+		border-right: 1px dashed #ccc;
+		text-align: right;
+		padding-top: 20px;
+		padding-right: 20px;
+		font-size: 18px;
 		font-family: NanumGothic;
 	}
-	.titleDiv{
+	.titleDiv {
 		display: flex;
-		flex-direction:column;
-		flex-wrap:wrap;
-		height:inherit;	
+		flex-direction: column;
+		flex-wrap: wrap;
+		height: inherit;
 	}
 	.title_span {
 		margin-top: 10px;

@@ -1,6 +1,7 @@
 function calendar_init() {
 	$("body").css('max-height','100%').css('overflow','hidden');
 	$(".contentBody").css('height','100%').css('overflow','none');
+	$(".contentMargin").css('max-height','100%').css({'overflow':'none','flex-direction':'unset', 'text-align':'unset'});
 	$("#dialog_field").hide();
 	var width = $(window).width();
 	var flag = 0;
